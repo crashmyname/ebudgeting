@@ -8,7 +8,7 @@ class SessionMiddleware {
                 'cookie_lifetime' => 86400,
                 'cookie_secure' => true,
                 'cookie_httponly' => true,
-                'cookie_samesite' => 'Srict',
+                'cookie_samesite' => 'Strict',
             ]); // Memulai session jika belum dimulai
         }
     }
@@ -16,6 +16,7 @@ class SessionMiddleware {
     public static function regenerate() {
         if (session_status() === PHP_SESSION_ACTIVE) {
             session_regenerate_id(true); // Mengganti ID session untuk meningkatkan keamanan
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); // Buat token CSRF baru
         }
     }
 

@@ -1,0 +1,399 @@
+[Error] Layout file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/layour/app.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 448
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(246): Support\BaseController->view('users/user', Array, 'layour/app')
+#1 C:\laragon\www\ebudgeting\routes\route.php(11): view('users/user', Array, 'layour/app')
+#2 [internal function]: {closure}()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(195): call_user_func_array(Object(Closure), Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] Layout file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/layour/app.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 448
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(246): Support\BaseController->view('users/user', Array, 'layour/app')
+#1 C:\laragon\www\ebudgeting\routes\route.php(11): view('users/user', Array, 'layour/app')
+#2 [internal function]: {closure}()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(195): call_user_func_array(Object(Closure), Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] Layout file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/layour/app.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 448
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(246): Support\BaseController->view('users/user', Array, 'layour/app')
+#1 C:\laragon\www\ebudgeting\routes\route.php(11): view('users/user', Array, 'layour/app')
+#2 [internal function]: {closure}()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(195): call_user_func_array(Object(Closure), Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] Layout file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/layour/app.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 448
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(246): Support\BaseController->view('users/user', Array, 'layour/app')
+#1 C:\laragon\www\ebudgeting\routes\route.php(11): view('users/user', Array, 'layour/app')
+#2 [internal function]: {closure}()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(195): call_user_func_array(Object(Closure), Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] Layout file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/layour/app.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 448
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(246): Support\BaseController->view('users/user', Array, 'layour/app')
+#1 C:\laragon\www\ebudgeting\routes\route.php(11): view('users/user', Array, 'layour/app')
+#2 [internal function]: {closure}()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(195): call_user_func_array(Object(Closure), Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] Layout file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/layour/app.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 448
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(246): Support\BaseController->view('users/user', Array, 'layour/app')
+#1 C:\laragon\www\ebudgeting\routes\route.php(11): view('users/user', Array, 'layour/app')
+#2 [internal function]: {closure}()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(195): call_user_func_array(Object(Closure), Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] Layout file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/layour/app.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 448
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(246): Support\BaseController->view('users/user', Array, 'layour/app')
+#1 C:\laragon\www\ebudgeting\routes\route.php(11): view('users/user', Array, 'layour/app')
+#2 [internal function]: {closure}()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(195): call_user_func_array(Object(Closure), Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'RETURNING id' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 462
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(462): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(429): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(42): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->create(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'RETURNING id' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 462
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(462): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(429): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(42): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->create(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'RETURNING id' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 462
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(462): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(429): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(42): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->create(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'RETURNING uid' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 462
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(462): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(429): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(42): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->create(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'RETURNING uid' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 462
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(462): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(429): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(42): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->create(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'RETURNING uid' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 462
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(462): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(429): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(42): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->create(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'role_id' at row 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 462
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(462): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(429): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(46): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->create(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}

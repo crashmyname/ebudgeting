@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'fadli-dev/treant',
-        'pretty_version' => 'v1.3',
-        'version' => '1.3.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '483e153e1d98a778ec399deffab747b1194c6299',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'fadli-dev/treant' => array(
-            'pretty_version' => 'v1.3',
-            'version' => '1.3.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '483e153e1d98a778ec399deffab747b1194c6299',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -47,9 +47,9 @@
             'dev_requirement' => false,
         ),
         'phpoffice/phpspreadsheet' => array(
-            'pretty_version' => '3.4.0',
-            'version' => '3.4.0.0',
-            'reference' => 'eec07c20b51cc785295a6feef81ada7feda755e7',
+            'pretty_version' => '3.5.0',
+            'version' => '3.5.0.0',
+            'reference' => 'fb74dcdfa5b538763ab980e977529bc783039aec',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpoffice/phpspreadsheet',
             'aliases' => array(),

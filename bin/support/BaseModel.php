@@ -448,7 +448,7 @@ class BaseModel
 
                 $table = self::$dynamicTable ?? $this->table;
                 // Menambahkan RETURNING untuk mengambil nilai primary key
-                $sql = "INSERT INTO {$table} ({$columns}) VALUES ({$placeholders}) RETURNING {$this->primaryKey}";
+                $sql = "INSERT INTO {$table} ({$columns}) VALUES ({$placeholders})";
 
                 // Menyiapkan statement
                 $stmt = $this->connection->prepare($sql);
@@ -462,8 +462,8 @@ class BaseModel
                 $stmt->execute();
 
                 // Mengambil ID yang baru dimasukkan menggunakan RETURNING
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);
-                $this->attributes[$this->primaryKey] = $result[$this->primaryKey]; // Menyimpan ID yang baru dimasukkan
+                // $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                $this->attributes[$this->primaryKey] = $this->connection->lastInsertId();
             }
         } catch (\Exception $e) {
             ErrorHandler::handleException($e); // Menangani error

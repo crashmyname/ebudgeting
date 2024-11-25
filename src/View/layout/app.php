@@ -15,7 +15,8 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= asset('stisla-1-2.2.0/dist/assets/css/style.css') ?>">
     <link rel="stylesheet" href="<?= asset('stisla-1-2.2.0/dist/assets/css/components.css') ?>">
-    <script src="<?= asset('stisla-1-2.2.0/dist/assets/modules/jquery.min.js') ?>"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
@@ -45,6 +46,90 @@
                                     class="fas fa-search"></i></a></li>
                     </ul>
                 </form>
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+                            class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
+                        <div class="dropdown-menu dropdown-list dropdown-menu-right">
+                            <div class="dropdown-header">Notifications
+                                <div class="float-right">
+                                    <a href="#">Mark All As Read</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-list-content dropdown-list-icons">
+                                <a href="#" class="dropdown-item dropdown-item-unread">
+                                    <div class="dropdown-item-icon bg-primary text-white">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <div class="dropdown-item-desc">
+                                        Template update is available now!
+                                        <div class="time text-primary">2 Min Ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <div class="dropdown-item-icon bg-info text-white">
+                                        <i class="far fa-user"></i>
+                                    </div>
+                                    <div class="dropdown-item-desc">
+                                        <b>You</b> and <b>Dedik Sugiharto</b> are now friends
+                                        <div class="time">10 Hours Ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <div class="dropdown-item-icon bg-success text-white">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="dropdown-item-desc">
+                                        <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
+                                        <div class="time">12 Hours Ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <div class="dropdown-item-icon bg-danger text-white">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="dropdown-item-desc">
+                                        Low disk space. Let's clean it!
+                                        <div class="time">17 Hours Ago</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <div class="dropdown-item-icon bg-info text-white">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <div class="dropdown-item-desc">
+                                        Welcome to Stisla template!
+                                        <div class="time">Yesterday</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="dropdown-footer text-center">
+                                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown"><a href="#" data-toggle="dropdown"
+                            class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img alt="image" src="<?= asset('stisla-1-2.2.0/dist/assets/img/avatar/avatar-1.png')?>" class="rounded-circle mr-1">
+                            <div class="d-sm-none d-lg-inline-block">Hi, Fadli Azka</div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-title">Logged in 5 min ago</div>
+                            <a href="features-profile.html" class="dropdown-item has-icon">
+                                <i class="far fa-user"></i> Profile
+                            </a>
+                            <a href="features-activities.html" class="dropdown-item has-icon">
+                                <i class="fas fa-bolt"></i> Activities
+                            </a>
+                            <a href="features-settings.html" class="dropdown-item has-icon">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </nav>
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
@@ -56,22 +141,27 @@
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Starter Menu</li>
-                        <!-- <li class="nav-link"><span><b>FISKAL YEAR 2023 2024</b></span></li> -->
+                        <li class=""><a class="nav-link" href="<?= base_url()?>"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                         <li class="dropdown ">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                     class="fas fa-database"></i><span>Master Data</span></a>
                             <ul class="dropdown-menu">
-                                <li class=""><a class="nav-link" href=""></i>User</a></li>
+                                <li class=""><a class="nav-link" href="<?= base_url().'/users' ?>"></i>User</a></li>
+                                <li class=""><a class="nav-link" href=""></i>Timer Expenses</a></li>
+                                <li class=""><a class="nav-link" href="<?= base_url().'/category'?>"></i>Category Expenses</a></li>
                                 <li class=""><a class="nav-link" href=""></i>Item & Price</a></li>
-                                <li class=""><a class="nav-link" href=""></i>Category Expenses</a></li>
-                                <li class=""><a class="nav-link" href=""></i>Cost Center</a></li>
+                                <li class=""><a class="nav-link" href=""></i>Cost Center / Profit Center</a></li>
                                 <li class=""><a class="nav-link" href=""></i>Unit Data</a></li>
+                                <li class=""><a class="nav-link" href=""></i>Dept</a></li>
+                                <li class=""><a class="nav-link" href=""></i>Fiscal</a></li>
                             </ul>
                         </li>
-                        <li class=""><a class="nav-link" href=""><i class="fas fa-tasks"></i><span>Plan Expenses</span></a></li>
-                        <li class=""><a class="nav-link" href=""><i class="fas fa-tachometer-alt"></i>
+                        <li class=""><a class="nav-link" href=""><i class="fas fa-tasks"></i><span>Plan
+                                    Expenses</span></a></li>
+                        <li class=""><a class="nav-link" href=""><i class="fas fa-money-check-alt"></i>
                                 <span>Forecast Expenses</span></a></li>
-                        <li class=""><a class="nav-link" href=""><i class="fas fa-file-invoice-dollar"></i>
+                        <li class=""><a class="nav-link" href=""><i
+                                    class="fas fa-file-invoice-dollar"></i>
                                 <span>Actual Expenses</span></a></li>
                     </ul>
                 </aside>
@@ -103,7 +193,7 @@
                 $('.sidebar-menu .nav-link').each(function() {
                     if ($(this).attr('href') === currentPath) {
                         $(this).parent('li').addClass(
-                        'active'); // Tambahkan class 'active' ke <li> yang sesuai
+                            'active'); // Tambahkan class 'active' ke <li> yang sesuai
                     }
                 });
             }
@@ -132,13 +222,13 @@
                     success: function(response) {
                         // Ambil hanya konten dari response dan perbarui bagian konten
                         let content = $(response).find('.main-content')
-                    .html(); // Mengambil konten dari response
+                            .html(); // Mengambil konten dari response
                         $('.main-content').html(content); // Update hanya bagian .main-content
 
                         // Jika ada JavaScript yang perlu dijalankan kembali, jalankan di sini
                         if (typeof initDataTable === 'function') {
                             initDataTable
-                        (); // Jika ada fungsi DataTable yang perlu dipanggil, jalankan kembali
+                                (); // Jika ada fungsi DataTable yang perlu dipanggil, jalankan kembali
                         }
                     },
                     error: function() {
@@ -182,12 +272,14 @@
     </script>
 
     <!-- General JS Scripts -->
+    <script src="<?= asset('stisla-1-2.2.0/dist/assets/modules/jquery.min.js') ?>"></script>
     <script src="<?= asset('stisla-1-2.2.0/dist/assets/modules/popper.js') ?>"></script>
     <script src="<?= asset('stisla-1-2.2.0/dist/assets/modules/tooltip.js') ?>"></script>
     <script src="<?= asset('stisla-1-2.2.0/dist/assets/modules/bootstrap/js/bootstrap.min.js') ?>"></script>
     <script src="<?= asset('stisla-1-2.2.0/dist/assets/modules/nicescroll/jquery.nicescroll.min.js') ?>"></script>
     <script src="<?= asset('stisla-1-2.2.0/dist/assets/modules/moment.min.js') ?>"></script>
     <script src="<?= asset('stisla-1-2.2.0/dist/assets/js/stisla.js') ?>"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
 
     <!-- JS Libraies -->
     <script src="<?= asset('stisla-1-2.2.0/dist/assets/modules/prism/prism.js') ?>"></script>
@@ -196,6 +288,7 @@
     <script src="<?= asset('stisla-1-2.2.0/dist/assets/js/page/bootstrap-modal.js') ?>"></script>
     <!-- JS Libraies -->
     <script src="https://cdnjs.com/libraries/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Template JS File -->
     <script src="<?= asset('stisla-1-2.2.0/dist/assets/js/scripts.js') ?>"></script>

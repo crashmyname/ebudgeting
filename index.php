@@ -8,7 +8,7 @@ use Support\Route;
 use Support\Api;
 
 // Jalankan middleware untuk menangani CORS
-CORSMiddleware::handle();
+// CORSMiddleware::handle();
 
 try {
     // Ambil URI dan tentukan apakah akses API atau route biasa
