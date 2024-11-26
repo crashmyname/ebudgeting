@@ -7,7 +7,9 @@
         <b>Category Expenses</b>
     </div>
     <div class="card-body">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>
+        <?= \Support\Session::user()->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>' : ''?>
+        <?= \Support\Session::user()->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit +</button>' : ''?>
+        <?= \Support\Session::user()->can_delete == 1 ? '<button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete +</button>' : '' ?>
     </div>
     <div class="card-body">
         <table id="datatable" class="display" style="width:100%">

@@ -8,8 +8,11 @@ class Auth{
     public static function attempt($credentials)
     {
         $user = User::query()
+                ->leftJoin('menu_access','menu_access.uid','=','users.uid')
+                ->leftJoin('menu','menu.menu_id','=','menu_access.menu_id')
                 ->where('username','=',$credentials['identifier'])
                 ->first();
+                // vd($user);
         if(!$user){
             User::query()
                 ->where('email','=',$credentials['identifier'])

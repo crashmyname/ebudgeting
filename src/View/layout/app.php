@@ -160,8 +160,10 @@
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                     class="fas fa-database"></i><span>Master Data</span></a>
                             <ul class="dropdown-menu">
+                                <?php if(\Support\Session::user()->menu_id == 2 && \Support\Session::user()->can_view == 1): ?>
                                 <li class=""><a class="nav-link"
                                         href="<?= base_url() . '/users' ?>"></i>User</a></li>
+                                <?php endif;?>
                                 <li class=""><a class="nav-link" href=""></i>Timer Expenses</a></li>
                                 <li class=""><a class="nav-link"
                                         href="<?= base_url() . '/category' ?>"></i>Category Expenses</a></li>
