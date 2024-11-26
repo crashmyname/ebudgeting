@@ -1,12 +1,14 @@
 <?php
 namespace Support;
+use Support\View;
 
 class AuthMiddleware
 {
     public function handle() {
         // Pengecekan login
         if (!$this->checkLogin()) {
-            include __DIR__ . '/../../app/Handle/errors/401.php';
+            // include __DIR__ . '/../../app/Handle/errors/401.php';
+            View::redirectTo('/');
             exit();
         }
         

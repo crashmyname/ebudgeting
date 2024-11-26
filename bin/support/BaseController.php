@@ -306,9 +306,19 @@ class BaseController {
         return $csrf;
     }
 
+    public function csrfMeta()
+    {
+        if(empty($_SESSION['csrf_token'])){
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        }
+        $token = $_SESSION['csrf_token'];
+        return "<meta name='csrf-token' content='{$token}'>";
+    }
+
     public function verifyCsrfToken($token)
     {
         return $token === $_SESSION['csrf_token'];
+        // return hash_equals($_SESSION['csrf_token'] ?? '', $token);
     }
 
     public function Method($method)

@@ -37,7 +37,6 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
     <div class="modal-dialog modal-lg" role="document">
     <form action="" method="POST" id="formaddcategory" enctype="multipart/form-data">
-        <?= csrf()?>
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Modal Category</h5>
@@ -48,6 +47,7 @@
             <div class="modal-body">
                 <div class="card-body">
                         <div class="row">
+                            <?= csrf()?>
                             <label>Code Category</label>
                             <input type="text" name="code_category" id="code_category" class="form-control">
                             <label>Category</label>

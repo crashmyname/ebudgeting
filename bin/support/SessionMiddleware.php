@@ -4,11 +4,13 @@ namespace Support;
 class SessionMiddleware {
     public static function start() {
         if (session_status() === PHP_SESSION_NONE) {
+            ini_set('session.cookie_samesite','None');
+            ini_set('session.cookie_secure',true);
             session_start([
                 'cookie_lifetime' => 86400,
-                'cookie_secure' => true,
+                'cookie_secure' => false,
                 'cookie_httponly' => true,
-                'cookie_samesite' => 'Strict',
+                'cookie_samesite' => 'None',
             ]); // Memulai session jika belum dimulai
         }
     }

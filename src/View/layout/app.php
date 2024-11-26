@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <?= csrfToken() ?>
     <title>Treant MVC</title>
 
     <!-- General CSS Files -->
@@ -20,6 +21,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -109,7 +117,8 @@
                     </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="<?= asset('stisla-1-2.2.0/dist/assets/img/avatar/avatar-1.png')?>" class="rounded-circle mr-1">
+                            <img alt="image" src="<?= asset('stisla-1-2.2.0/dist/assets/img/avatar/avatar-1.png') ?>"
+                                class="rounded-circle mr-1">
                             <div class="d-sm-none d-lg-inline-block">Hi, Fadli Azka</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -134,23 +143,27 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="<?= base_url() ?>">E-Budgeting</a><br>
+                        <a href="<?= base_url().'/home' ?>">E-Budgeting</a><br>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="<?= base_url() ?>">E</a>
+                        <a href="<?= base_url().'/home' ?>">E</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Starter Menu</li>
-                        <li class=""><a class="nav-link" href="<?= base_url()?>"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                        <li class=""><a class="nav-link" href="<?= base_url().'/home' ?>"><i
+                                    class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                         <li class="dropdown ">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                     class="fas fa-database"></i><span>Master Data</span></a>
                             <ul class="dropdown-menu">
-                                <li class=""><a class="nav-link" href="<?= base_url().'/users' ?>"></i>User</a></li>
+                                <li class=""><a class="nav-link"
+                                        href="<?= base_url() . '/users' ?>"></i>User</a></li>
                                 <li class=""><a class="nav-link" href=""></i>Timer Expenses</a></li>
-                                <li class=""><a class="nav-link" href="<?= base_url().'/category'?>"></i>Category Expenses</a></li>
+                                <li class=""><a class="nav-link"
+                                        href="<?= base_url() . '/category' ?>"></i>Category Expenses</a></li>
                                 <li class=""><a class="nav-link" href=""></i>Item & Price</a></li>
-                                <li class=""><a class="nav-link" href=""></i>Cost Center / Profit Center</a></li>
+                                <li class=""><a class="nav-link" href=""></i>Cost Center / Profit
+                                        Center</a></li>
                                 <li class=""><a class="nav-link" href=""></i>Unit Data</a></li>
                                 <li class=""><a class="nav-link" href=""></i>Dept</a></li>
                                 <li class=""><a class="nav-link" href=""></i>Fiscal</a></li>
@@ -176,8 +189,7 @@
 
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad
-                        Nauval Azhar</a>
+                    Develop By <div class="bullet"></div><a href="https://crashmyname.github.io/">Fadli Azka Prayogi</a>
                 </div>
                 <div class="footer-right">
 
