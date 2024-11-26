@@ -39,6 +39,7 @@
         gtag('config', 'UA-94034622-3');
     </script>
     <!-- /END GA -->
+    <?php $user = Support\Session::get('user');?>
 </head>
 
 <body>
@@ -119,7 +120,7 @@
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="<?= asset('stisla-1-2.2.0/dist/assets/img/avatar/avatar-1.png') ?>"
                                 class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, Fadli Azka</div>
+                            <div class="d-sm-none d-lg-inline-block">Hi, <?= \Support\Session::user()->username?></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-title">Logged in 5 min ago</div>
@@ -133,9 +134,12 @@
                                 <i class="fas fa-cog"></i> Settings
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item has-icon text-danger">
+                            <a href="" id="logout" class="dropdown-item has-icon text-danger">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
+                            <form action="<?= base_url().'/logout'?>" id="formlogout" method="POST">
+                                <?= csrf()?>
+                            </form>
                         </div>
                     </li>
                 </ul>
@@ -281,6 +285,20 @@
                 }
             };
         });
+        document.getElementById('logout').addEventListener('click',function(e){
+            e.preventDefault();
+            Swal.fire({
+                title: 'Logout!',
+                icon: 'warning',
+                text: 'Apakah yakin ingin Logout?',
+                showCancelButton: true,
+                confirmButtonText: 'Ya Logout!',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('formlogout').submit();
+                }
+            })
+        })
     </script>
 
     <!-- General JS Scripts -->

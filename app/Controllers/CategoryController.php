@@ -18,7 +18,8 @@ class CategoryController extends BaseController
     {
         if(Request::isAjax()){
             $category = Category::query()
-                        ->select('uuid','code_category','category','group_category','sub','validity')
+                        ->select('uuid','code_category','category','group_category','sub','validity','category_id')
+                        ->orderBy('category_id','asc')
                         ->get();
             return DataTables::of($category)
                     ->make(true);

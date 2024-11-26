@@ -8,6 +8,7 @@ use Support\AuthMiddleware; //<-- Penambahan Middleware atau session login
 
 // handleMiddleware();
 Route::get('/login',[AuthController::class,'index']);
+Route::post('/login',[AuthController::class, 'onLogin']);
 Route::get('/', function(){
     return view('auth/login');
 });
@@ -24,4 +25,6 @@ Route::group([AuthMiddleware::class],function(){
     Route::get('/category',[CategoryController::class,'index']);
     Route::get('/getcategory',[CategoryController::class,'getCategory']);
     Route::post('/category',[CategoryController::class,'create']);
+
+    Route::post('/logout',[AuthController::class, 'logout']);
 });

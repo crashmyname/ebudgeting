@@ -319,6 +319,12 @@ class BaseController {
     {
         return $token === $_SESSION['csrf_token'];
         // return hash_equals($_SESSION['csrf_token'] ?? '', $token);
+        // $isValid = hash_equals($_SESSION['csrf_token'] ?? '', $token);
+        // if ($isValid) {
+        //     // Regenerasi token baru setelah validasi berhasil
+        //     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        // }
+        // return $isValid;
     }
 
     public function Method($method)

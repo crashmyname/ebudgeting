@@ -14,10 +14,10 @@ class AuthMiddleware
         
         // Token check, jika Anda ingin juga memvalidasi token di middleware ini
         // Jika Anda hanya membutuhkan login, Anda bisa menghilangkan bagian ini.
-        if (!$this->checkToken()) {
-            include __DIR__ . '/../../app/Handle/errors/401.php';
-            exit();
-        }
+        // if (!$this->checkToken()) {
+        //     include __DIR__ . '/../../app/Handle/errors/401.php';
+        //     exit();
+        // }
     }
 
     public function checkLogin() {

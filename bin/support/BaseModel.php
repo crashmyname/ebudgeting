@@ -29,6 +29,9 @@ class BaseModel
 
     public function __construct($attributes = [])
     {
+        if (is_object($attributes)) {
+            $attributes = (array) $attributes;
+        }
         $this->attributes = $this->filterAttributes($attributes);
         $this->connect();
     }
