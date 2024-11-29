@@ -8,23 +8,26 @@ class SessionMiddleware {
             ini_set('session.cookie_secure',true);
             session_start([
                 'cookie_lifetime' => 86400,
-                'cookie_secure' => true,
+                'cookie_secure' => false,
                 'cookie_httponly' => false,
-                'cookie_samesite' => 'None',
+                'cookie_samesite' => 'Lax',
             ]); // Memulai session jika belum dimulai
+            if (!isset($_SESSION['csrf_token'])) {
+                $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+            }
         }
     }
 
     public static function regenerate() {
         if (session_status() === PHP_SESSION_ACTIVE) {
             session_regenerate_id(true); // Mengganti ID session untuk meningkatkan keamanan
-            $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); // Buat token CSRF baru
-            // $csrfToken = bin2hex(random_bytes(32));
-            // $_SESSION['csrf_token'] = $csrfToken; // Simpan di session
+            // $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); // Buat token CSRF baru
+            $csrfToken = bin2hex(random_bytes(32));
+            $_SESSION['csrf_token'] = $csrfToken; // Simpan di session
             // setcookie('csrf_token', $csrfToken, [
             //     'expires' => time() + 3600, // 1 jam
             //     'path' => '/',
-            //     'secure' => true, // Hanya dikirim melalui HTTPS
+            //     'secure' => false, // Hanya dikirim melalui HTTPS
             //     'httponly' => false, // Bisa diakses oleh JavaScript
             //     'samesite' => 'None'
             // ]);

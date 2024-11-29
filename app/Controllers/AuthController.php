@@ -38,7 +38,6 @@ class AuthController extends BaseController
         //     return redirect('/home');
         // }
         return view('auth/login');
-        // vd($user);
     }
 
     public function logout(Request $request)

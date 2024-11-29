@@ -34,7 +34,11 @@ class CategoryController extends BaseController
     
     public function create(Request $request)
     {
-        $category = Category::create([
+        $category = Category::query()->where('code_category','=',$request->code_category)->first();
+        if($category){
+            Response::json(['status'=>409,'message'=>'Data Yang diinputkan sudah ada']);
+        }
+        Category::create([
             'uuid' => UUID::generateUuid(),
             'code_category' => $request->code_category,
             'category' => $request->category,

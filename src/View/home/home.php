@@ -7,6 +7,7 @@
         <div class="row">
             <?php $user = \Support\Session::user();
             echo $user->menu_id?>
+            <?php print_r($user)?>
         </div>
     </div>
 </section>

@@ -7,7 +7,12 @@
         <b>User Management</b>
     </div>
     <div class="card-body">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>
+        <?php $user = \Support\Session::user();?>
+        <?php foreach($user->menus as $menu):?>
+        <?= ($menu->menu_id == 1 && $menu->can_create == 1) ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>' : null ?>
+        <?= ($menu->menu_id == 1 && $menu->can_update == 1) ? '<button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Update +</button>' : null ?>
+        <?= ($menu->menu_id == 1 && $menu->can_delete == 1) ? '<button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete +</button>' : null ?>
+        <?php endforeach;?>
     </div>
     <div class="card-body">
         <table id="datatable" class="display" style="width:100%">

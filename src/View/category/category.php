@@ -6,10 +6,14 @@
     <div class="section-body">
         <b>Category Expenses</b>
     </div>
+    <?php $user = \Support\Session::user();?>
+    <!-- <?php print_r($user)?> -->
     <div class="card-body">
-        <?= \Support\Session::user()->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>' : ''?>
-        <?= \Support\Session::user()->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Edit +</button>' : ''?>
-        <?= \Support\Session::user()->can_delete == 1 ? '<button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete +</button>' : '' ?>
+        <?php foreach($user->menus as $menu): ?>
+        <?= ($menu->menu_id == 2 && $menu->can_create == 1) ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>' : ''?>
+        <?= ($menu->menu_id == 2 && $menu->can_update == 1) ? '<button class="btn btn-warning" data-toggle="modal" data- target="#exampleModal">Edit +</button>' : ''?>
+        <?= ($menu->menu_id == 2 && $menu->can_delete == 1) ? '<button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete +</button>' : '' ?>
+        <?php endforeach; ?>
     </div>
     <div class="card-body">
         <table id="datatable" class="display" style="width:100%">
@@ -118,8 +122,8 @@
                         icon: 'success',
                         text: 'Category Added',
                     });
-                    initDataTable().DataTable.ajax.reload();
                     $('#formaddcategory')[0].reset();
+                    initDataTable().DataTable.ajax.reload();
                 } else {
                     Swal.fire({
                         title: 'Error',

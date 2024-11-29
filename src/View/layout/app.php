@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <?= csrfToken() ?>
-    <title>Treant MVC</title>
+    <title>E-Budgeting</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="<?= asset('stisla-1-2.2.0/dist/assets/modules/bootstrap/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= asset('stisla-1-2.2.0/dist/assets/modules/fontawesome/css/all.min.css') ?>">
+    <link rel="shortcut icon" href="<?= asset('ebudgeting.jpg') ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= asset('ebudgeting.jpg') ?>" type="image/png">
 
     <!-- CSS Libraries -->
 
@@ -39,7 +41,7 @@
         gtag('config', 'UA-94034622-3');
     </script>
     <!-- /END GA -->
-    <?php $user = Support\Session::get('user');?>
+    <?php $user = Support\Session::user(); ?>
 </head>
 
 <body>
@@ -120,7 +122,7 @@
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="<?= asset('stisla-1-2.2.0/dist/assets/img/avatar/avatar-1.png') ?>"
                                 class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">Hi, <?= \Support\Session::user()->username?></div>
+                            <div class="d-sm-none d-lg-inline-block">Hi, <?= \Support\Session::user()->username ?></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-title">Logged in 5 min ago</div>
@@ -137,8 +139,8 @@
                             <a href="" id="logout" class="dropdown-item has-icon text-danger">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
-                            <form action="<?= base_url().'/logout'?>" id="formlogout" method="POST">
-                                <?= csrf()?>
+                            <form action="<?= base_url() . '/logout' ?>" id="formlogout" method="POST">
+                                <?= csrf() ?>
                             </form>
                         </div>
                     </li>
@@ -147,42 +149,69 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="<?= base_url().'/home' ?>">E-Budgeting</a><br>
+                        <a href="<?= base_url() . '/home' ?>">E-Budgeting</a><br>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="<?= base_url().'/home' ?>">E</a>
+                        <a href="<?= base_url() . '/home' ?>">E</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Starter Menu</li>
-                        <li class=""><a class="nav-link" href="<?= base_url().'/home' ?>"><i
+                        <li class=""><a class="nav-link" href="<?= base_url() . '/home' ?>"><i
                                     class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                        <li class="dropdown ">
-                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
-                                    class="fas fa-database"></i><span>Master Data</span></a>
+
+                        <!-- Dropdown Master Data -->
+                        <li class="dropdown">
+                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                                <i class="fas fa-database"></i><span>Master Data</span>
+                            </a>
                             <ul class="dropdown-menu">
-                                <?php if(\Support\Session::user()->menu_id == 2 && \Support\Session::user()->can_view == 1): ?>
-                                <li class=""><a class="nav-link"
-                                        href="<?= base_url() . '/users' ?>"></i>User</a></li>
-                                <?php endif;?>
-                                <li class=""><a class="nav-link" href=""></i>Timer Expenses</a></li>
-                                <li class=""><a class="nav-link"
-                                        href="<?= base_url() . '/category' ?>"></i>Category Expenses</a></li>
-                                <li class=""><a class="nav-link" href=""></i>Item & Price</a></li>
-                                <li class=""><a class="nav-link" href=""></i>Cost Center / Profit
-                                        Center</a></li>
-                                <li class=""><a class="nav-link" href=""></i>Unit Data</a></li>
-                                <li class=""><a class="nav-link" href=""></i>Dept</a></li>
-                                <li class=""><a class="nav-link" href=""></i>Fiscal</a></li>
+                                <?php foreach ($user->menus as $menu): ?>
+                                <?php if ($menu->menu_id == 1 && $menu->can_view == 1): ?>
+                                <li><a class="nav-link" href="<?= base_url() . '/users' ?>">User</a></li>
+                                <?php endif; ?>
+                                <?php if ($menu->menu_id == 2 && $menu->can_view == 1): ?>
+                                <li><a class="nav-link" href="<?= base_url() . '/category' ?>">Category Expenses</a>
+                                </li>
+                                <?php endif; ?>
+                                <?php if ($menu->menu_id == 3 && $menu->can_view == 1): ?>
+                                <li><a class="nav-link" href="">Timer Expenses</a></li>
+                                <?php endif; ?>
+                                <?php if ($menu->menu_id == 4 && $menu->can_view == 1): ?>
+                                <li><a class="nav-link" href="">Item & Price</a></li>
+                                <?php endif; ?>
+                                <?php if ($menu->menu_id == 5 && $menu->can_view == 1): ?>
+                                <li><a class="nav-link" href="">Cost Center / Profit Center</a></li>
+                                <?php endif; ?>
+                                <?php if ($menu->menu_id == 6 && $menu->can_view == 1): ?>
+                                <li><a class="nav-link" href="">Unit Data</a></li>
+                                <?php endif; ?>
+                                <?php if ($menu->menu_id == 7 && $menu->can_view == 1): ?>
+                                <li><a class="nav-link" href="">Dept</a></li>
+                                <?php endif; ?>
+                                <?php if ($menu->menu_id == 8 && $menu->can_view == 1): ?>
+                                <li><a class="nav-link" href="">Fiscal</a></li>
+                                <?php endif; ?>
+                                <?php endforeach; ?>
                             </ul>
                         </li>
-                        <li class=""><a class="nav-link" href=""><i class="fas fa-tasks"></i><span>Plan
+
+                        <!-- Menu di luar dropdown -->
+                        <?php foreach ($user->menus as $menu): ?>
+                        <?php if ($menu->menu_id == 9 && $menu->can_view == 1): ?>
+                        <li><a class="nav-link" href=""><i class="fas fa-tasks"></i><span>Plan
                                     Expenses</span></a></li>
-                        <li class=""><a class="nav-link" href=""><i class="fas fa-money-check-alt"></i>
-                                <span>Forecast Expenses</span></a></li>
-                        <li class=""><a class="nav-link" href=""><i
-                                    class="fas fa-file-invoice-dollar"></i>
-                                <span>Actual Expenses</span></a></li>
+                        <?php endif; ?>
+                        <?php if ($menu->menu_id == 10 && $menu->can_view == 1): ?>
+                        <li><a class="nav-link" href=""><i class="fas fa-money-check-alt"></i><span>Forecast
+                                    Expenses</span></a></li>
+                        <?php endif; ?>
+                        <?php if ($menu->menu_id == 11 && $menu->can_view == 1): ?>
+                        <li><a class="nav-link" href=""><i class="fas fa-file-invoice-dollar"></i><span>Actual
+                                    Expenses</span></a></li>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
                     </ul>
+
                 </aside>
             </div>
 
@@ -195,7 +224,8 @@
 
             <footer class="main-footer">
                 <div class="footer-left">
-                    Develop By <div class="bullet"></div><a href="https://crashmyname.github.io/">Fadli Azka Prayogi</a>
+                    Develop By <div class="bullet"></div><a href="https://crashmyname.github.io/">Fadli Azka
+                        Prayogi</a>
                 </div>
                 <div class="footer-right">
 
@@ -287,7 +317,7 @@
                 }
             };
         });
-        document.getElementById('logout').addEventListener('click',function(e){
+        document.getElementById('logout').addEventListener('click', function(e) {
             e.preventDefault();
             Swal.fire({
                 title: 'Logout!',
