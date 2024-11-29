@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Models\Category;
 use Support\BaseController;
 use Support\DataTables;
+use Support\Date;
 use Support\Request;
 use Support\Response;
 use Support\UUID;
@@ -19,6 +20,7 @@ class CategoryController extends BaseController
         if(Request::isAjax()){
             $category = Category::query()
                         ->select('uuid','code_category','category','group_category','sub','validity','category_id')
+                        ->where('deleted_at','=',null)
                         ->orderBy('category_id','asc')
                         ->get();
             return DataTables::of($category)
@@ -46,6 +48,26 @@ class CategoryController extends BaseController
             'sub' => $request->sub,
             'validity' => $request->validity,
         ]);
+        return Response::json(['status'=>200]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $category = Category::query()->where('uuid','=',$id)->first();
+        $category->category = $request->category;
+        $category->group_category = $request->group_category;
+        $category->sub = $request->sub;
+        $category->validity = $request->validity;
+        $category->updated_at = Date::Now();
+        $category->save();
+        return Response::json(['status'=>200]);
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $category = Category::query()->where('uuid','=',$id)->first();
+        $category->deleted_at = Date::Now();
+        $category->save();
         return Response::json(['status'=>200]);
     }
 }

@@ -25,6 +25,8 @@ Route::group([AuthMiddleware::class],function(){
     Route::get('/category',[CategoryController::class,'index']);
     Route::get('/getcategory',[CategoryController::class,'getCategory']);
     Route::post('/category',[CategoryController::class,'create']);
+    Route::post('/ucategory/{id}',[CategoryController::class,'update']);
+    Route::delete('/category/{id}',[CategoryController::class,'delete']);
 
     Route::post('/logout',[AuthController::class, 'logout']);
 });
