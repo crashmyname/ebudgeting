@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Fiscal;
 use Support\BaseController;
+use Support\DataTables;
 use Support\Request;
 use Support\Validator;
 use Support\View;
@@ -9,9 +11,17 @@ use Support\CSRFToken;
 
 class FiscalController extends BaseController
 {
+    public function getFiscal(Request $request)
+    {
+        if(Request::isAjax()){
+            $fiscal = Fiscal::all();
+            return DataTables::of($fiscal)->make(true);
+        }
+    }
     public function index()
     {
-        // Tampilkan semua resource
+        $title = 'Fiscal';
+        return view('fiscal/fiscal',['title'=>$title],'layout/app');
     }
 
     public function show($id)

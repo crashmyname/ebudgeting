@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\TypeModel;
 use Support\BaseController;
+use Support\DataTables;
 use Support\Request;
 use Support\Validator;
 use Support\View;
@@ -9,9 +11,17 @@ use Support\CSRFToken;
 
 class TypemodelController extends BaseController
 {
+    public function getTypeModel(Request $request)
+    {
+        if(Request::isAjax()){
+            $typemodel = TypeModel::all();
+            return DataTables::of($typemodel)->make(true);
+        }
+    }
     public function index()
     {
-        // Tampilkan semua resource
+        $title = 'Type Model';
+        return view('typemodel/typemodel',['title'=>$title],'layout/app');
     }
 
     public function show($id)

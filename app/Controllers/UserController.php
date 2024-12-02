@@ -60,6 +60,13 @@ class UserController extends BaseController
                 'menu_category' => 2,
                 'menu_timer' => 3,
                 'menu_item' => 4,
+                'menu_type' => 5,
+                'menu_unit' => 6,
+                'menu_dept' => 7,
+                'menu_fiscal' => 8,
+                'menu_plan' => 9,
+                'menu_forecase' => 10,
+                'menu_actual' => 11,
             ];
 
             // Ambil data request sebagai array

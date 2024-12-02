@@ -1,10 +1,10 @@
 <section class="section">
     <div class="section-header">
-        <h1>Item</h1>
+        <h1>Fiscal</h1>
     </div>
 
     <div class="section-body">
-        <b>Item Expenses</b>
+        <b>Fiscal</b>
     </div>
     <?php $user = \Support\Session::user(); ?>
     <div class="card-body">
@@ -19,23 +19,15 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Item Name</th>
-                    <th>Group</th>
-                    <th>Harga</th>
-                    <th>Code Category</th>
-                    <th>Unit</th>
-                    <th>Validity</th>
+                    <th>Fiscal</th>
+                    <th>Descriptopn</th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
                     <th>No</th>
-                    <th>Item Name</th>
-                    <th>Group</th>
-                    <th>Harga</th>
-                    <th>Code Category</th>
-                    <th>Unit</th>
-                    <th>Validity</th>
+                    <th>Fiscal</th>
+                    <th>Descriptopn</th>
                 </tr>
             </tfoot>
         </table>
@@ -126,7 +118,7 @@
             $('#datatable').DataTable().clear().destroy(); // Hancurkan DataTable yang sudah ada
         }
         $('#datatable').DataTable({
-            ajax: '<?= base_url() ?>/getitem',
+            ajax: '<?= base_url() ?>/getfiscal',
             processing: true,
             serverSide: true,
             select: true,
@@ -139,32 +131,13 @@
                     }
                 },
                 {
-                    data: 'item_name',
-                    name: 'item_name'
+                    data: 'fiscal',
+                    name: 'fiscal'
                 },
                 {
-                    data: 'group_item',
-                    name: 'group_item'
-                },
-                {
-                    data: 'harga',
-                    name: 'harga'
-                },
-                {
-                    data: 'code_category',
-                    name: 'code_category'
-                },
-                {
-                    data: 'unit',
-                    name: 'unit'
-                },
-                {
-                    data: 'validity',
-                    name: 'validity',
-                    render: function(data, type, row) {
-                        return row.validity == 1 ? '<span class="badge badge-success">active</span>' : '<span class="badge badge-danger">inactive</span>';
-                    }
-                },
+                    data: 'description',
+                    name: 'description'
+                }
             ]
         });
     }

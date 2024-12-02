@@ -188,22 +188,22 @@
                                 </li>
                                 <?php endif; ?>
                                 <?php if ($menu->menu_id == 3 && $menu->can_view == 1): ?>
-                                <li><a class="nav-link" href="">Timer Expenses</a></li>
+                                <li><a class="nav-link" href="<?= base_url() . '/timer' ?>">Timer Expenses</a></li>
                                 <?php endif; ?>
                                 <?php if ($menu->menu_id == 4 && $menu->can_view == 1): ?>
-                                <li><a class="nav-link" href="">Item & Price</a></li>
+                                <li><a class="nav-link" href="<?= base_url() . '/item' ?>">Item & Price</a></li>
                                 <?php endif; ?>
                                 <?php if ($menu->menu_id == 5 && $menu->can_view == 1): ?>
-                                <li><a class="nav-link" href="">Cost Center / Profit Center</a></li>
+                                <li><a class="nav-link" href="<?= base_url() . '/typemodel' ?>">Cost Center / Profit Center</a></li>
                                 <?php endif; ?>
                                 <?php if ($menu->menu_id == 6 && $menu->can_view == 1): ?>
-                                <li><a class="nav-link" href="">Unit Data</a></li>
+                                <li><a class="nav-link" href="<?= base_url() . '/unit' ?>">Unit Data</a></li>
                                 <?php endif; ?>
                                 <?php if ($menu->menu_id == 7 && $menu->can_view == 1): ?>
-                                <li><a class="nav-link" href="">Dept</a></li>
+                                <li><a class="nav-link" href="<?= base_url() . '/dept' ?>">Dept</a></li>
                                 <?php endif; ?>
                                 <?php if ($menu->menu_id == 8 && $menu->can_view == 1): ?>
-                                <li><a class="nav-link" href="">Fiscal</a></li>
+                                <li><a class="nav-link" href="<?= base_url() . '/fiscal' ?>">Fiscal</a></li>
                                 <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>

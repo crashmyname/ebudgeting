@@ -233,6 +233,98 @@
                                     <label class="form-check-label" for="menu_item_delete">Delete</label>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="d-block">Menu Cost Center</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_type_view"
+                                         name="menu_type[]" value="view">
+                                    <label class="form-check-label" for="menu_type_view">View</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_type_add"
+                                         name="menu_type[]" value="add">
+                                    <label class="form-check-label" for="menu_type_add">Add</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_type_edit"
+                                         name="menu_type[]" value="edit">
+                                    <label class="form-check-label" for="menu_type_edit">Edit</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_type_delete"
+                                         name="menu_type[]" value="delete">
+                                    <label class="form-check-label" for="menu_type_delete">Delete</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="d-block">Menu Unit Data</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_unit_view"
+                                         name="menu_unit[]" value="view">
+                                    <label class="form-check-label" for="menu_unit_view">View</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_unit_add"
+                                         name="menu_unit[]" value="add">
+                                    <label class="form-check-label" for="menu_unit_add">Add</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_unit_edit"
+                                         name="menu_unit[]" value="edit">
+                                    <label class="form-check-label" for="menu_unit_edit">Edit</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_unit_delete"
+                                         name="menu_unit[]" value="delete">
+                                    <label class="form-check-label" for="menu_unit_delete">Delete</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="d-block">Menu Dept</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_dept_view"
+                                         name="menu_dept[]" value="view">
+                                    <label class="form-check-label" for="menu_dept_view">View</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_dept_add"
+                                         name="menu_dept[]" value="add">
+                                    <label class="form-check-label" for="menu_dept_add">Add</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_dept_edit"
+                                         name="menu_dept[]" value="edit">
+                                    <label class="form-check-label" for="menu_dept_edit">Edit</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_dept_delete"
+                                         name="menu_dept[]" value="delete">
+                                    <label class="form-check-label" for="menu_dept_delete">Delete</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="d-block">Menu Fiscal</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_fiscal_view"
+                                         name="menu_fiscal[]" value="view">
+                                    <label class="form-check-label" for="menu_fiscal_view">View</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_fiscal_add"
+                                         name="menu_fiscal[]" value="add">
+                                    <label class="form-check-label" for="menu_fiscal_add">Add</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_fiscal_edit"
+                                         name="menu_fiscal[]" value="edit">
+                                    <label class="form-check-label" for="menu_fiscal_edit">Edit</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="menu_fiscal_delete"
+                                         name="menu_fiscal[]" value="delete">
+                                    <label class="form-check-label" for="menu_fiscal_delete">Delete</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="row-body">
                             <!-- <button type="submit" class="btn btn-primary">Save</button> -->

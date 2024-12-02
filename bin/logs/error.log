@@ -1186,3 +1186,52 @@ Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement
 #4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
 #5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
 #6 {main}
+[Error] View file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/type/type.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 453
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(251): Support\BaseController->view('type/type', Array, 'layout/app')
+#1 C:\laragon\www\ebudgeting\app\Controllers\TypemodelController.php(24): view('type/type', Array, 'layout/app')
+#2 [internal function]: App\Controllers\TypemodelController->index()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] View file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/type/type.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 453
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(251): Support\BaseController->view('type/type', Array, 'layout/app')
+#1 C:\laragon\www\ebudgeting\app\Controllers\TypemodelController.php(24): view('type/type', Array, 'layout/app')
+#2 [internal function]: App\Controllers\TypemodelController->index()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] View file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/type/type.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 453
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(251): Support\BaseController->view('type/type', Array, 'layout/app')
+#1 C:\laragon\www\ebudgeting\app\Controllers\TypemodelController.php(24): view('type/type', Array, 'layout/app')
+#2 [internal function]: App\Controllers\TypemodelController->index()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] View file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/type/type.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 453
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(251): Support\BaseController->view('type/type', Array, 'layout/app')
+#1 C:\laragon\www\ebudgeting\app\Controllers\TypemodelController.php(24): view('type/type', Array, 'layout/app')
+#2 [internal function]: App\Controllers\TypemodelController->index()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] View file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/type/type.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 453
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(251): Support\BaseController->view('type/type', Array, 'layout/app')
+#1 C:\laragon\www\ebudgeting\app\Controllers\TypemodelController.php(24): view('type/type', Array, 'layout/app')
+#2 [internal function]: App\Controllers\TypemodelController->index()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] View file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/type/type.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 453
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(251): Support\BaseController->view('type/type', Array, 'layout/app')
+#1 C:\laragon\www\ebudgeting\app\Controllers\TypemodelController.php(24): view('type/type', Array, 'layout/app')
+#2 [internal function]: App\Controllers\TypemodelController->index()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] View file not found: C:\laragon\www\ebudgeting\bin\support/../../src/View/type/typemodel.php in C:\laragon\www\ebudgeting\bin\support\BaseController.php at line 453
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(251): Support\BaseController->view('type/typemodel', Array, 'layout/app')
+#1 C:\laragon\www\ebudgeting\app\Controllers\TypemodelController.php(24): view('type/typemodel', Array, 'layout/app')
+#2 [internal function]: App\Controllers\TypemodelController->index()
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}

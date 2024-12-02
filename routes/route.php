@@ -1,6 +1,10 @@
 <?php
 use App\Controllers\AuthController;
 use App\Controllers\CategoryController;
+use App\Controllers\FiscalController;
+use App\Controllers\ItemController;
+use App\Controllers\TypemodelController;
+use App\Controllers\UnitController;
 use App\Controllers\UserController;
 use Support\Route;
 use Support\View;
@@ -31,5 +35,22 @@ Route::group([AuthMiddleware::class],function(){
     Route::put('/ucategory/{id}',[CategoryController::class,'update']);
     Route::delete('/category/{id}',[CategoryController::class,'delete']);
 
+    // ITEM
+    Route::get('/item',[ItemController::class, 'index']);
+    Route::get('/getitem',[ItemController::class, 'getItem']);
+
+    // Fiscal
+    Route::get('/fiscal',[FiscalController::class, 'index']);
+    Route::get('/getfiscal',[FiscalController::class, 'getFiscal']);
+
+    // Type/Model
+    Route::get('/typemodel',[TypemodelController::class, 'index']);
+    Route::get('/gettypemodel',[TypemodelController::class, 'getTypeModel']);
+
+    // Unit
+    Route::get('/unit',[UnitController::class, 'index']);
+    Route::get('/getunit',[UnitController::class, 'getUnit']);
+
+    // LOGOUT
     Route::post('/logout',[AuthController::class, 'logout']);
 });
