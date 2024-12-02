@@ -5,9 +5,8 @@
 
     <div class="section-body">
         <div class="row">
-            <?php $user = \Support\Session::user();
-            echo $user->menu_id?>
-            <?php print_r($user)?>
+            <?php $user = \Support\Session::user(); ?>
+            <?php echo \Support\Session::user()->username ?>
         </div>
     </div>
 </section>

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="<?= asset('stisla-1-2.2.0/dist/assets/css/components.css') ?>">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/select/2.1.0/css/select.bootstrap4.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.3/css/responsive.bootstrap5.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Start GA -->
@@ -162,6 +163,18 @@
 
                         <!-- Dropdown Master Data -->
                         <li class="dropdown">
+                            <?php 
+                            // Cek apakah ada submenu yang boleh diakses
+                            $hasVisibleSubmenu = false;
+                            foreach ($user->menus as $menu) {
+                                if (in_array($menu->menu_id, [1, 2, 3, 4, 5, 6, 7, 8]) && $menu->can_view == 1) {
+                                    $hasVisibleSubmenu = true;
+                                    break; // Keluar dari loop jika ditemukan submenu yang bisa dilihat
+                                }
+                            }
+                            // Jika ada submenu yang diizinkan, tampilkan menu utama
+                            if ($hasVisibleSubmenu): 
+                            ?>
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                                 <i class="fas fa-database"></i><span>Master Data</span>
                             </a>
@@ -194,6 +207,7 @@
                                 <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>
+                            <?php endif; ?>
                         </li>
 
                         <!-- Menu di luar dropdown -->
@@ -346,6 +360,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/select/2.1.0/js/dataTables.select.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.3/js/dataTables.responsive.js"></script>
     <script src="https://cdn.datatables.net/select/2.1.0/js/select.bootstrap4.js"></script>
 
     <!-- JS Libraies -->

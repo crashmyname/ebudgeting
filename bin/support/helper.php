@@ -255,5 +255,9 @@ use Support\BaseController;
         $basecontroller = new BaseController();
         return $basecontroller->back();
     }
+
+    function setTime(){
+        date_default_timezone_set('Asia/Jakarta');
+    }
     
 ?>

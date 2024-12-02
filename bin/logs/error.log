@@ -1012,3 +1012,177 @@ Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement
 #4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
 #5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
 #6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(62): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(62): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(63): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(62): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'group_category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(63): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'group_category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(63): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(63): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(62): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 179
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 179
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(62): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(196): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'category' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(62): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\CategoryController->update(Object(Support\Request), '263b2195-d4fb-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'menu_id' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 465
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(432): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(67): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 NULL AND uid 2 NULL) LIMIT 1' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(76): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 NULL AND uid 2 NULL) LIMIT 1' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(76): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 NULL AND uid 2 NULL) LIMIT 1' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(76): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 NULL AND uid 2 NULL) LIMIT 1' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(76): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 NULL AND uid 2 NULL) LIMIT 1' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(76): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 NULL AND uid 2 NULL) LIMIT 1' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(76): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 NULL AND uid 2 NULL) LIMIT 1' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(76): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1 NULL AND uid 2 NULL) LIMIT 1' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(76): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2 NULL AND uid 2 NULL) LIMIT 1' at line 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(76): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'can_view' at row 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 496
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(496): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(446): Support\BaseModel->updates()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(89): Support\BaseModel->save()
+#3 [internal function]: App\Controllers\UserController->role(Object(Support\Request), 'ab2b4548-3a74-4...')
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}

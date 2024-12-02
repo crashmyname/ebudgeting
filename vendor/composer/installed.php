@@ -3,7 +3,7 @@
         'name' => 'fadli-dev/treant',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '483e153e1d98a778ec399deffab747b1194c6299',
+        'reference' => 'c83af5624385c44c45c85a9e00c460b868ae9e1d',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'fadli-dev/treant' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '483e153e1d98a778ec399deffab747b1194c6299',
+            'reference' => 'c83af5624385c44c45c85a9e00c460b868ae9e1d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

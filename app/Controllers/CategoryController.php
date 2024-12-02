@@ -55,7 +55,7 @@ class CategoryController extends BaseController
     {
         $category = Category::query()->where('uuid','=',$id)->first();
         $category->category = $request->category;
-        $category->group_category = $request->group_category;
+        $category->group_category = $request->group;
         $category->sub = $request->sub;
         $category->validity = $request->validity;
         $category->updated_at = Date::Now();

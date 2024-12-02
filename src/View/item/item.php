@@ -1,10 +1,10 @@
 <section class="section">
     <div class="section-header">
-        <h1>Category</h1>
+        <h1>Item</h1>
     </div>
 
     <div class="section-body">
-        <b>Category Expenses</b>
+        <b>Item Expenses</b>
     </div>
     <?php $user = \Support\Session::user(); ?>
     <div class="card-body">

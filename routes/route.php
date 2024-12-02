@@ -18,14 +18,17 @@ Route::group([AuthMiddleware::class],function(){
     });
     // USERS
     Route::get('/users',[UserController::class, 'index']);
-    Route::post('/users',[UserController::class, 'create']);
     Route::get('/getusers',[UserController::class, 'getUser']);
+    Route::post('/users',[UserController::class, 'create']);
+    Route::post('/role-management/{id}',[UserController::class, 'role']);
+    Route::put('/uuser/{id}',[UserController::class, 'update']);
+    Route::delete('/user/{id}',[UserController::class, 'delete']);
     
     // CATEGORIES
     Route::get('/category',[CategoryController::class,'index']);
     Route::get('/getcategory',[CategoryController::class,'getCategory']);
     Route::post('/category',[CategoryController::class,'create']);
-    Route::post('/ucategory/{id}',[CategoryController::class,'update']);
+    Route::put('/ucategory/{id}',[CategoryController::class,'update']);
     Route::delete('/category/{id}',[CategoryController::class,'delete']);
 
     Route::post('/logout',[AuthController::class, 'logout']);
