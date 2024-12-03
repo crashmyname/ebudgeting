@@ -220,15 +220,15 @@
                         <!-- Menu di luar dropdown -->
                         <?php foreach ($user->menus as $menu): ?>
                         <?php if ($menu->menu_id == 9 && $menu->can_view == 1): ?>
-                        <li><a class="nav-link" href=""><i class="fas fa-tasks"></i><span>Plan
+                        <li><a class="nav-link" href="<?= base_url().'/planexpenses'?>"><i class="fas fa-tasks"></i><span>Plan
                                     Expenses</span></a></li>
                         <?php endif; ?>
                         <?php if ($menu->menu_id == 10 && $menu->can_view == 1): ?>
-                        <li><a class="nav-link" href=""><i class="fas fa-money-check-alt"></i><span>Forecast
+                        <li><a class="nav-link" href="<?= base_url().'/forecastexpenses'?>"><i class="fas fa-money-check-alt"></i><span>Forecast
                                     Expenses</span></a></li>
                         <?php endif; ?>
                         <?php if ($menu->menu_id == 11 && $menu->can_view == 1): ?>
-                        <li><a class="nav-link" href=""><i class="fas fa-file-invoice-dollar"></i><span>Actual
+                        <li><a class="nav-link" href="<?= base_url().'/actualexpenses'?>"><i class="fas fa-file-invoice-dollar"></i><span>Actual
                                     Expenses</span></a></li>
                         <?php endif; ?>
                         <?php endforeach; ?>

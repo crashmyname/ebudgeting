@@ -1,6 +1,7 @@
 <?php
 use App\Controllers\AuthController;
 use App\Controllers\CategoryController;
+use App\Controllers\ExpensesController;
 use App\Controllers\FiscalController;
 use App\Controllers\ItemController;
 use App\Controllers\TypemodelController;
@@ -52,6 +53,11 @@ Route::group([AuthMiddleware::class],function(){
     // Unit
     Route::get('/unit',[UnitController::class, 'index']);
     Route::get('/getunit',[UnitController::class, 'getUnit']);
+
+    // Expenses
+    Route::get('/planexpenses',[ExpensesController::class, 'indexPlan']);
+    Route::get('/forecastexpenses',[ExpensesController::class, 'indexForecast']);
+    Route::get('/actualexpenses',[ExpensesController::class, 'indexActual']);
 
     // LOGOUT
     Route::post('/logout',[AuthController::class, 'logout']);
