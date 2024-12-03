@@ -41,6 +41,8 @@ Route::group([AuthMiddleware::class],function(){
     // ITEM
     Route::get('/item',[ItemController::class, 'index']);
     Route::get('/getitem',[ItemController::class, 'getItem']);
+    Route::post('/item',[ItemController::class, 'create']);
+    Route::post('/import-item',[ItemController::class, 'importExcel']);
 
     // Fiscal
     Route::get('/fiscal',[FiscalController::class, 'index']);
@@ -53,6 +55,7 @@ Route::group([AuthMiddleware::class],function(){
     // Unit
     Route::get('/unit',[UnitController::class, 'index']);
     Route::get('/getunit',[UnitController::class, 'getUnit']);
+    Route::post('/unit',[UnitController::class, 'create']);
 
     // Expenses
     Route::get('/planexpenses',[ExpensesController::class, 'indexPlan']);

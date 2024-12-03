@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Category;
 use App\Models\Item;
+use App\Models\Unit;
 use App\Models\User;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 use Support\BaseController;
 use Support\DataTables;
 use Support\Date;
@@ -43,7 +46,46 @@ class ItemController extends BaseController
             View::error('errors/403');
             return;
         }
-        return view('item/item',['title'=>$title],'layout/app');
+        $unit = Unit::query()->select('code_unit','unit')->get();
+        $code_category = Category::query()->select('code_category')->get();
+        return view('item/item',['title'=>$title,'unit'=>$unit,'code'=>$code_category],'layout/app');
+    }
+
+    public function importExcel(Request $request)
+    {
+        if(!$request->file('file')){
+            echo 'File tidak ada';
+            return;
+        }
+        $filepath = $request->file('file');
+        try{
+            $spreadsheet = IOFactory::load($request->getPath('file'));
+            $sheet = $spreadsheet->getActiveSheet();
+            $data = $sheet->toArray(null, true, true, true);
+
+            // Mengabaikan baris pertama (header)
+            array_shift($data);
+            // Menampilkan data untuk pengecekan (atau simpan ke database)
+            // echo '<pre>';
+            // print_r($data);
+            // echo '</pre>';
+            foreach($data as $row){
+                // $unit = Unit::query()->where('unit','=',trim($row['D']))->first();
+                $item = [
+                    'uuid' => UUID::generateUuid(),
+                    'item_name' => $row['B'],
+                    'group_item' => $row['G'],
+                    'harga' => $row['C'],
+                    'code_category' => $row['E'],
+                    'unit' => $row['D'],
+                    'validity' => 1
+                ];
+                $item = Item::create($item);
+            }
+            return Response::json(['status'=>200]);
+        } catch(\PhpOffice\PhpSpreadsheet\Reader\Exception $e){
+            echo 'Terjadi kesalahan saat membaca file: ' . $e->getMessage();
+        }
     }
 
     public function create(Request $request)
@@ -55,14 +97,9 @@ class ItemController extends BaseController
             'harga' => $request->harga,
             'code_category' => $request->code_category,
             'unit' => $request->unit,
-            'validity' => $request->validity
+            'validity' => 1,
         ]);
         return Response::json(['status'=>200]);
-    }
-
-    public function import(Request $request)
-    {
-
     }
 
     public function update(Request $request, $id)

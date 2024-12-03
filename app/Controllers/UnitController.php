@@ -6,7 +6,9 @@ use App\Models\User;
 use Support\BaseController;
 use Support\DataTables;
 use Support\Request;
+use Support\Response;
 use Support\Session;
+use Support\UUID;
 use Support\Validator;
 use Support\View;
 use Support\CSRFToken;
@@ -41,5 +43,27 @@ class UnitController extends BaseController
             return;
         }
         return view('unit/unit',['title'=>$title],'layout/app');
+    }
+
+    public function create(Request $request)
+    {
+        $unit = Unit::query()->orderBy('code_unit','desc')->first();
+        if($unit){
+            $lastCode = intval(substr($unit->code_unit, 3)); // Mengambil angka dari kode terakhir
+            $newCode = 'T' . str_pad($lastCode + 1, 4, '0', STR_PAD_LEFT);
+            $unit = Unit::create([
+                'uuid' => UUID::generateUuid(),
+                'code_unit' => $newCode,
+                'unit' => $request->unit
+            ]);
+            return Response::json(['status'=>200]);
+        } else {
+            $unit = Unit::create([
+                'uuid' => UUID::generateUuid(),
+                'code_unit' => 'T0001',
+                'unit' => $request->unit
+            ]);
+            return Response::json(['status'=>200]);
+        }
     }
 }

@@ -9,7 +9,7 @@
     <?php $user = \Support\Session::user(); ?>
     <div class="card-body">
         <?php foreach($user->menus as $menu): ?>
-        <?= $menu->menu_id == 4 && $menu->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>' : '' ?>
+        <?= $menu->menu_id == 4 && $menu->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button> <button class="btn btn-success" data-toggle="modal" data-target="#exampleModalImport">Import +</button>' : '' ?>
         <?= $menu->menu_id == 4 && $menu->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="" id="modalupdatecategory">Edit +</button>' : '' ?>
         <?= $menu->menu_id == 4 && $menu->can_delete == 1 ? '<button class="btn btn-danger" type="submit" id="deletecategory">Delete +</button>' : '' ?>
         <?php endforeach; ?>
@@ -43,7 +43,56 @@
 </section>
 <div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
     <div class="modal-dialog modal-lg" role="document">
-        <form action="" method="POST" id="formaddcategory" enctype="multipart/form-data">
+        <form action="" method="POST" id="formadditem" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <div class="row">
+                            <?= csrf() ?>
+                            <label>Item Name</label>
+                            <input type="text" name="item_name" id="item_name" class="form-control">
+                            <label>Group Item</label>
+                            <input type="text" name="group_item" id="group_item" class="form-control">
+                            <label>Harga</label>
+                            <input type="number" name="harga" id="harga" class="form-control">
+                            <label>Code Category</label>
+                            <input list="datalist" name="code_category" id="code_category" class="form-control">
+                            <datalist id="datalist">
+                                <option value="" disabled selected hidden> Select </option>
+                                <?php foreach($code as $data):?>
+                                    <option value="<?= $data->code_category?>"><?= $data->code_category?></option>
+                                <?php endforeach; ?>
+                            </datalist>
+                            <label>Unit</label>
+                            <select name="unit" id="unit" class="form-control">
+                                <option value="" disabled selected hidden> Select </option>
+                                <?php foreach($unit as $data):?>
+                                    <option value="<?= $data->code_unit?>"><?= $data->code_unit?> <?= $data->unit?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="row-body">
+                            <!-- <button type="submit" class="btn btn-primary">Save</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="additem">Save changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModalImport">
+    <div class="modal-dialog modal-lg" role="document">
+        <form action="" method="POST" id="formimportitem" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Modal Category</h5>
@@ -55,16 +104,8 @@
                     <div class="card-body">
                         <div class="row">
                             <?= csrf() ?>
-                            <label>Code Category</label>
-                            <input type="text" name="code_category" id="code_category" class="form-control">
-                            <label>Category</label>
-                            <input type="text" name="category" id="category" class="form-control">
-                            <label>Group</label>
-                            <input type="text" name="group" id="group" class="form-control">
-                            <label>Sub</label>
-                            <input type="text" name="sub" id="sub" class="form-control">
-                            <label>Validity</label>
-                            <input type="text" name="validity" id="validity" class="form-control">
+                            <label>Masukkan File Import Item</label>
+                            <input type="file" name="file" id="file" class="form-control">
                         </div>
                         <div class="row-body">
                             <!-- <button type="submit" class="btn btn-primary">Save</button> -->
@@ -73,7 +114,8 @@
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="addcategory">Save changes</button>
+                    <button type="submit" class="btn btn-primary" id="importitem">Save changes</button>
+                    <button type="button" class="btn btn-disabled btn-primary btn-progress" id="loading" style="display:none">Save changes</button>
                 </div>
             </div>
         </form>
@@ -169,12 +211,12 @@
         });
     }
 
-    function crudCategory() {
+    function crudItem() {
         var table = $('#datatable').DataTable();
-        $('#addcategory').on('click', function(e) {
+        $('#additem').on('click', function(e) {
             e.preventDefault();
-            var url = '<?= base_url() . '/category' ?>';
-            var formData = new FormData($('#formaddcategory')[0]);
+            var url = '<?= base_url() . '/item' ?>';
+            var formData = new FormData($('#formadditem')[0]);
             $.ajax({
                 type: 'POST',
                 url: url,
@@ -187,9 +229,9 @@
                         Swal.fire({
                             title: 'Success',
                             icon: 'success',
-                            text: 'Category Added',
+                            text: 'Item Added',
                         });
-                        $('#formaddcategory')[0].reset();
+                        $('#formadditem')[0].reset();
                         initDataTable().DataTable.ajax.reload(null, false);
                     } else if (response.status == 409) {
                         Swal.fire({
@@ -202,6 +244,50 @@
                             title: 'Error',
                             icon: 'error',
                             text: 'Error Added',
+                        });
+                    }
+                }
+            })
+        })
+        $('#importitem').on('click', function(e){
+            e.preventDefault();
+            var url = '<?= base_url() . '/import-item' ?>';
+            var formData = new FormData($('#formimportitem')[0]);
+            $('#importitem').hide();
+            $('#loading').show();
+            if(($('#file').val() === '')){
+                Swal.fire({
+                    title: 'Warning',
+                    icon: 'warning',
+                    text: 'File Import is Empty',
+                })
+                $('#importitem').show();
+                $('#loading').hide();
+            }
+            
+            $.ajax({
+                type: 'POST',
+                url: url,
+                processData: false,
+                contentType: false,
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status == 200) {
+                        Swal.fire({
+                            title: 'Success',
+                            icon: 'success',
+                            text: 'Item Added',
+                        });
+                        $('#importitem').show();
+                        $('#loading').hide();
+                        $('#formimportitem')[0].reset();
+                        initDataTable().DataTable.ajax.reload(null, false);
+                    } else {
+                        Swal.fire({
+                            title: 'Error',
+                            icon: 'error',
+                            text: 'Error import',
                         });
                     }
                 }
@@ -351,6 +437,6 @@
     // Panggil initDataTable saat halaman Products dimuat
     $(document).ready(function() {
         initDataTable();
-        crudCategory();
+        crudItem();
     });
 </script>

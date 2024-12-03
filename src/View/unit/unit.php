@@ -35,10 +35,10 @@
 </section>
 <div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
     <div class="modal-dialog modal-lg" role="document">
-        <form action="" method="POST" id="formaddcategory" enctype="multipart/form-data">
+        <form action="" method="POST" id="formaddunit" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal Category</h5>
+                    <h5 class="modal-title">Modal Unit</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -47,16 +47,8 @@
                     <div class="card-body">
                         <div class="row">
                             <?= csrf() ?>
-                            <label>Code Category</label>
-                            <input type="text" name="code_category" id="code_category" class="form-control">
-                            <label>Category</label>
-                            <input type="text" name="category" id="category" class="form-control">
-                            <label>Group</label>
-                            <input type="text" name="group" id="group" class="form-control">
-                            <label>Sub</label>
-                            <input type="text" name="sub" id="sub" class="form-control">
-                            <label>Validity</label>
-                            <input type="text" name="validity" id="validity" class="form-control">
+                            <label>Unit</label>
+                            <input type="text" name="unit" id="unit" class="form-control">
                         </div>
                         <div class="row-body">
                             <!-- <button type="submit" class="btn btn-primary">Save</button> -->
@@ -65,7 +57,7 @@
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="addcategory">Save changes</button>
+                    <button type="submit" class="btn btn-primary" id="addunit">Save changes</button>
                 </div>
             </div>
         </form>
@@ -142,12 +134,12 @@
         });
     }
 
-    function crudCategory() {
+    function crudUnit() {
         var table = $('#datatable').DataTable();
-        $('#addcategory').on('click', function(e) {
+        $('#addunit').on('click', function(e) {
             e.preventDefault();
-            var url = '<?= base_url() . '/category' ?>';
-            var formData = new FormData($('#formaddcategory')[0]);
+            var url = '<?= base_url() . '/unit' ?>';
+            var formData = new FormData($('#formaddunit')[0]);
             $.ajax({
                 type: 'POST',
                 url: url,
@@ -160,9 +152,11 @@
                         Swal.fire({
                             title: 'Success',
                             icon: 'success',
-                            text: 'Category Added',
+                            text: 'Unit Added',
+                            timerProgressBar: true,
+                            timer: 1000
                         });
-                        $('#formaddcategory')[0].reset();
+                        $('#formaddunit')[0].reset();
                         initDataTable().DataTable.ajax.reload(null, false);
                     } else if (response.status == 409) {
                         Swal.fire({
@@ -324,6 +318,6 @@
     // Panggil initDataTable saat halaman Products dimuat
     $(document).ready(function() {
         initDataTable();
-        crudCategory();
+        crudUnit();
     });
 </script>

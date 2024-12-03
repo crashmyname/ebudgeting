@@ -1238,3 +1238,54 @@ Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(251): Support\BaseCon
 [Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
 Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
 #1 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}
+[Error] SQLSTATE[HY000]: General error: 1364 Field 'uuid' doesn't have a default value in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 465
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(432): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\ItemController.php(82): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\ItemController->importExcel(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'unit' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 465
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(432): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\ItemController.php(83): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\ItemController->importExcel(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'unit' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 465
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(432): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\ItemController.php(83): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\ItemController->importExcel(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'unit' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 465
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(432): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\ItemController.php(83): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\ItemController->importExcel(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'unit' cannot be null in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 465
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(432): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\ItemController.php(83): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\ItemController->importExcel(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'unit' at row 1 in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 465
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(432): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\ItemController.php(83): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\ItemController->importExcel(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
