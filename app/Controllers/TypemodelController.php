@@ -16,7 +16,7 @@ class TypemodelController extends BaseController
     public function getTypeModel(Request $request)
     {
         if(Request::isAjax()){
-            $typemodel = TypeModel::all();
+            $typemodel = TypeModel::query()->where('deleted_at','=',null)->get();
             return DataTables::of($typemodel)->make(true);
         }
     }

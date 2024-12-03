@@ -10,8 +10,8 @@
     <div class="card-body">
         <?php foreach($user->menus as $menu): ?>
         <?= $menu->menu_id == 4 && $menu->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button> <button class="btn btn-success" data-toggle="modal" data-target="#exampleModalImport">Import +</button>' : '' ?>
-        <?= $menu->menu_id == 4 && $menu->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="" id="modalupdatecategory">Edit +</button>' : '' ?>
-        <?= $menu->menu_id == 4 && $menu->can_delete == 1 ? '<button class="btn btn-danger" type="submit" id="deletecategory">Delete +</button>' : '' ?>
+        <?= $menu->menu_id == 4 && $menu->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="" id="modalupdateitem">Edit +</button>' : '' ?>
+        <?= $menu->menu_id == 4 && $menu->can_delete == 1 ? '<button class="btn btn-danger" type="submit" id="deleteitem">Delete +</button>' : '' ?>
         <?php endforeach; ?>
     </div>
     <div class="card-body">
@@ -73,7 +73,7 @@
                             <select name="unit" id="unit" class="form-control">
                                 <option value="" disabled selected hidden> Select </option>
                                 <?php foreach($unit as $data):?>
-                                    <option value="<?= $data->code_unit?>"><?= $data->code_unit?> <?= $data->unit?></option>
+                                    <option value="<?= $data->unit?>"><?= $data->unit?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -123,7 +123,7 @@
 </div>
 <div class="modal fade" tabindex="-1" role="dialog" id="exampleModalEdit">
     <div class="modal-dialog modal-lg" role="document">
-        <form action="" method="POST" id="formupdatecategory" enctype="multipart/form-data">
+        <form action="" method="POST" id="formupdateitem" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Modal Category</h5>
@@ -136,17 +136,27 @@
                         <div class="row">
                             <?= csrf() ?>
                             <?= method('PUT') ?>
+                            <label>Item Name</label>
+                            <input type="text" name="item_name" id="uitem_name" class="form-control">
+                            <label>Group Item</label>
+                            <input type="text" name="group_item" id="ugroup_item" class="form-control">
+                            <label>Harga</label>
+                            <input type="number" name="harga" id="uharga" class="form-control">
                             <label>Code Category</label>
-                            <input type="text" name="code_category" id="ucode_category" class="form-control"
-                                readonly>
-                            <label>Category</label>
-                            <input type="text" name="category" id="ucategory" class="form-control">
-                            <label>Group</label>
-                            <input type="text" name="group" id="ugroup" class="form-control">
-                            <label>Sub</label>
-                            <input type="text" name="sub" id="usub" class="form-control">
-                            <label>Validity</label>
-                            <input type="text" name="validity" id="uvalidity" class="form-control">
+                            <input list="datalist" name="code_category" id="ucode_category" class="form-control">
+                            <datalist id="datalist">
+                                <!-- <option value="" id=""> </option> -->
+                                <?php foreach($code as $data):?>
+                                    <option value="<?= $data->code_category?>"><?= $data->code_category?></option>
+                                <?php endforeach; ?>
+                            </datalist>
+                            <label>Unit</label>
+                            <select name="unit" id="uunit" class="form-control">
+                                <!-- <option value="" disabled selected hidden> Select </option> -->
+                                <?php foreach($unit as $data):?>
+                                    <option value="<?= $data->unit?>"><?= $data->unit?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                         <div class="row-body">
                             <!-- <button type="submit" class="btn btn-primary">Save</button> -->
@@ -155,7 +165,7 @@
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-warning" id="updatecategory">Save changes</button>
+                    <button type="submit" class="btn btn-warning" id="updateitem">Save changes</button>
                 </div>
             </div>
         </form>
@@ -293,7 +303,7 @@
                 }
             })
         })
-        $('#modalupdatecategory').on('click', function(e) {
+        $('#modalupdateitem').on('click', function(e) {
             e.preventDefault();
             var selectedData = table.rows({
                 selected: true
@@ -319,7 +329,7 @@
                 });
             }
         });
-        $('#updatecategory').on('click', function(e) {
+        $('#updateitem').on('click', function(e) {
             e.preventDefault();
             var selectedData = table.rows({
                 selected: true
@@ -337,8 +347,8 @@
             }
             var row = selectedData[0];
             var uID = row.uuid;
-            var updateCategory = "<?= base_url() . '/ucategory/' ?>" + uID;
-            var formID = '#formupdatecategory';
+            var updateItem = "<?= base_url() . '/uitem/' ?>" + uID;
+            var formID = '#formupdateitem';
             $('#modalwarning').modal('hide');
             if (selectedData.length > 0) {
                 Swal.fire({
@@ -349,11 +359,11 @@
                     confirmButtonText: 'Ya, Ubah!!',
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        var formUpCategory = new FormData($(formID)[0]);
+                        var formUpItem = new FormData($(formID)[0]);
                         $.ajax({
                             type: 'POST',
-                            url: updateCategory,
-                            data: formUpCategory,
+                            url: updateItem,
+                            data: formUpItem,
                             contentType: false,
                             processData: false,
                             dataType: 'json',
@@ -368,7 +378,7 @@
                                         timerProgressBar: true,
                                     })
                                     table.ajax.reload(null,false);
-                                    $('#formupdatecategory')[0].reset();
+                                    $('#formupdateitem')[0].reset();
                                 } else {
                                     Swal.fire({
                                         title: 'error',
@@ -385,7 +395,7 @@
                 })
             }
         })
-        $('#deletecategory').on('click', function(e) {
+        $('#deleteitem').on('click', function(e) {
             e.preventDefault();
             var selectedData = table.rows({
                 selected: true
@@ -405,7 +415,7 @@
                             const uuid = data.uuid;
                             $.ajax({
                                 type: 'DELETE',
-                                url: "<?= base_url() . '/category/' ?>" + uuid,
+                                url: "<?= base_url() . '/item/' ?>" + uuid,
                                 success: function(response) {
                                     if (response.status == 200) {
                                         Swal.fire({

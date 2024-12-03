@@ -43,6 +43,8 @@ Route::group([AuthMiddleware::class],function(){
     Route::get('/getitem',[ItemController::class, 'getItem']);
     Route::post('/item',[ItemController::class, 'create']);
     Route::post('/import-item',[ItemController::class, 'importExcel']);
+    Route::put('/uitem/{id}',[ItemController::class, 'update']);
+    Route::delete('/item/{id}',[ItemController::class, 'delete']);
 
     // Fiscal
     Route::get('/fiscal',[FiscalController::class, 'index']);

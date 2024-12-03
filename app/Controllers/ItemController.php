@@ -23,7 +23,7 @@ class ItemController extends BaseController
     public function getItem(Request $request)
     {
         if(Request::isAjax()){
-            $item = Item::all();
+            $item = Item::query()->where('deleted_at','=',null)->get();
             return DataTables::of($item)->make(true);
         }
     }

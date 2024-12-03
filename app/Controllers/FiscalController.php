@@ -16,7 +16,7 @@ class FiscalController extends BaseController
     public function getFiscal(Request $request)
     {
         if(Request::isAjax()){
-            $fiscal = Fiscal::all();
+            $fiscal = Fiscal::query()->where('deleted_at','=',null)->get();
             return DataTables::of($fiscal)->make(true);
         }
     }

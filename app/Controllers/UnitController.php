@@ -19,7 +19,7 @@ class UnitController extends BaseController
     public function getUnit(Request $request)
     {
         if(Request::isAjax()){
-            $unit = Unit::all();
+            $unit = Unit::query()->where('deleted_at','=',null)->get();
             return DataTables::of($unit)->make(true);
         }
     }
