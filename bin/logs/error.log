@@ -1235,3 +1235,6 @@ Trace: #0 C:\laragon\www\ebudgeting\bin\support\helper.php(251): Support\BaseCon
 #3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
 #4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
 #5 {main}
+[Error] Invalid CSRF token in C:\laragon\www\ebudgeting\bin\support\Route.php at line 169
+Trace: #0 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#1 {main}

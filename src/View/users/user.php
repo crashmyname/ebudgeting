@@ -142,7 +142,7 @@
                             <input type="text" name="username" id="roleuser" class="form-control" readonly>
                             <!-- <label>Menu User</label> -->
                             <div class="form-group">
-                                <label class="d-block">Menu User</label>
+                            <h6><label class="d-block">Menu User</label></h6>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="menu_user_view"
                                          name="menu_user[]" value="view">
@@ -165,7 +165,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Menu Category Expenses</label>
+                            <h6><label class="d-block">Menu Category Expenses</label></h6>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="menu_category_view"
                                          name="menu_category[]" value="view">
@@ -188,7 +188,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Menu Timer Expenses</label>
+                            <h6><label class="d-block">Menu Timer Expenses</label></h6>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="menu_timer_view"
                                          name="menu_timer[]" value="view">
@@ -211,7 +211,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Menu Item & Price</label>
+                            <h6><label class="d-block">Menu Item & Price</label></h6>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="menu_item_view"
                                          name="menu_item[]" value="view">
@@ -234,7 +234,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Menu Cost Center</label>
+                                <h6><label class="d-block">Menu Cost Center</label></h6>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="menu_type_view"
                                          name="menu_type[]" value="view">
@@ -257,7 +257,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Menu Unit Data</label>
+                            <h6><label class="d-block">Menu Unit Data</label></h6>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="menu_unit_view"
                                          name="menu_unit[]" value="view">
@@ -280,7 +280,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Menu Dept</label>
+                            <h6><label class="d-block">Menu Dept</label></h6>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="menu_dept_view"
                                          name="menu_dept[]" value="view">
@@ -303,7 +303,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="d-block">Menu Fiscal</label>
+                            <h6><label class="d-block">Menu Fiscal</label></h6>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="menu_fiscal_view"
                                          name="menu_fiscal[]" value="view">

@@ -27,6 +27,8 @@ Route::group([AuthMiddleware::class],function(){
     Route::post('/role-management/{id}',[UserController::class, 'role']);
     Route::put('/uuser/{id}',[UserController::class, 'update']);
     Route::delete('/user/{id}',[UserController::class, 'delete']);
+    Route::get('/profile/{id}',[UserController::class, 'profile']);
+    Route::post('/profile/{id}',[UserController::class, 'updateProfile']);
     
     // CATEGORIES
     Route::get('/category',[CategoryController::class,'index']);

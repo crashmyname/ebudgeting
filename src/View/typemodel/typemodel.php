@@ -9,9 +9,9 @@
     <?php $user = \Support\Session::user(); ?>
     <div class="card-body">
         <?php foreach($user->menus as $menu): ?>
-        <?= $menu->menu_id == 2 && $menu->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>' : '' ?>
-        <?= $menu->menu_id == 2 && $menu->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="" id="modalupdatecategory">Edit +</button>' : '' ?>
-        <?= $menu->menu_id == 2 && $menu->can_delete == 1 ? '<button class="btn btn-danger" type="submit" id="deletecategory">Delete +</button>' : '' ?>
+        <?= $menu->menu_id == 5 && $menu->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>' : '' ?>
+        <?= $menu->menu_id == 5 && $menu->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="" id="modalupdatecategory">Edit +</button>' : '' ?>
+        <?= $menu->menu_id == 5 && $menu->can_delete == 1 ? '<button class="btn btn-danger" type="submit" id="deletecategory">Delete +</button>' : '' ?>
         <?php endforeach; ?>
     </div>
     <div class="card-body">

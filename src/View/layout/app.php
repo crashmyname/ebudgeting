@@ -122,13 +122,19 @@
                     </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <?php if(!\Support\Session::user()->profile):?>
                             <img alt="image" src="<?= asset('stisla-1-2.2.0/dist/assets/img/avatar/avatar-1.png') ?>"
                                 class="rounded-circle mr-1">
+                            <?php else: ?>
+                            <img alt="image" src="<?= asset('profile-users/'.\Support\Session::user()->profile) ?>"
+                                class="rounded-circle mr-1">
+                            <?php endif; ?>
                             <div class="d-sm-none d-lg-inline-block">Hi, <?= \Support\Session::user()->username ?></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-title">Logged in 5 min ago</div>
-                            <a href="features-profile.html" class="dropdown-item has-icon">
+                            <a href="<?= base_url() . '/profile/' . \Support\Session::user()->uuid ?>"
+                                class="dropdown-item has-icon">
                                 <i class="far fa-user"></i> Profile
                             </a>
                             <a href="features-activities.html" class="dropdown-item has-icon">
@@ -194,7 +200,8 @@
                                 <li><a class="nav-link" href="<?= base_url() . '/item' ?>">Item & Price</a></li>
                                 <?php endif; ?>
                                 <?php if ($menu->menu_id == 5 && $menu->can_view == 1): ?>
-                                <li><a class="nav-link" href="<?= base_url() . '/typemodel' ?>">Cost Center / Profit Center</a></li>
+                                <li><a class="nav-link" href="<?= base_url() . '/typemodel' ?>">Cost Center / Profit
+                                        Center</a></li>
                                 <?php endif; ?>
                                 <?php if ($menu->menu_id == 6 && $menu->can_view == 1): ?>
                                 <li><a class="nav-link" href="<?= base_url() . '/unit' ?>">Unit Data</a></li>

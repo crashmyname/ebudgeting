@@ -32,7 +32,16 @@ class UserController extends BaseController
 
     public function create(Request $request)
     {
-        // $validator = Validator::make()
+        $validator = Validator::make($request->all(),[
+            'username' => 'required|min:4',
+            'name' => 'required|min:3',
+            'dept' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:5',
+        ]);
+        if($validator){
+            return Response::json(['status'=>$validator]);
+        }
         $user = User::create([
             'uuid' => UUID::generateUuid(),
             'username' => $request->username,
@@ -69,14 +78,9 @@ class UserController extends BaseController
                 'menu_actual' => 11,
             ];
 
-            // Ambil data request sebagai array
             $requestData = $request->all();
-
-            // Iterasi setiap menu
             foreach ($menus as $menuKey => $menuId) {
-                // Cek apakah menu ini ada dalam request
                 if (isset($requestData[$menuKey])) {
-                    // Konversi data array dari request menjadi permissions
                     $permission = $this->convertToPermissions($requestData[$menuKey]);
                     $existingRecord = MenuManagement::query()->where('menu_id','=' ,$menuId)
                                                 ->where('uid', '=',$user->uid)
@@ -165,5 +169,42 @@ class UserController extends BaseController
         $user->deleted_at = Date::Now();
         $user->save();
         return Response::json(['status' => 200]);
+    }
+
+    public function profile(Request $request, $id)
+    {
+        $user = User::query()->where('uuid','=',$id)->first();
+        return view('users/profil',['user'=>$user],'layout/app');
+    }
+
+    public function updateProfile(Request $request, $id)
+    {
+        $user = User::query()->where('uuid','=',$id)->first();
+        if($user->username == Session::user()->username){
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->dept = $request->dept;
+            if($request->password){
+                $user->password = password_hash($request->password,PASSWORD_BCRYPT);
+            }
+            if($request->getClientOriginalName('foto')){
+                $path = storage_path('profile-users');
+                if(!file_exists($path)){
+                    mkdir($path,0777,true);
+                }
+                $oldFile = $path.'/'.$user->profile;
+                if(file_exists($oldFile)){
+                    unlink($oldFile);
+                }
+                $user->profile = $request->getClientOriginalName('foto');
+                $tempPath = $request->getPath('foto');
+                $destination = $path.'/'.$user->profile;
+                move_uploaded_file($tempPath,$destination);
+            }
+            $user->save();
+            Session::flash('success', 'Profile berhasil diperbarui!');
+            return redirect('/home');
+        }
+        Response::json(['status'=>403,'message'=>'Forbiden Access for update profile isnt you']);
     }
 }
