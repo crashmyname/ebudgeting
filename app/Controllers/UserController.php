@@ -27,6 +27,21 @@ class UserController extends BaseController
     public function index()
     {
         $title = 'Users';
+        $user = User::query()->leftJoin('menu_access','menu_access.uid','=','users.uid')
+        ->where('menu_access.uid','=',Session::user()->uid)
+        ->where('menu_access.menu_id','=',1)
+        ->where('menu_access.can_view','=',1)
+        ->first();
+        
+        if (!$user) {
+            View::error('errors/403');
+            return;
+        }
+
+        if(!$user && !$user->menu_id == 1 && !$user->can_view == 1){
+            View::error('errors/403');
+            return;
+        }
         return view('users/user', ['title' => $title], 'layout/app');
     }
 
@@ -35,7 +50,7 @@ class UserController extends BaseController
         $validator = Validator::make($request->all(),[
             'username' => 'required|min:4',
             'name' => 'required|min:3',
-            'dept' => 'required',
+            'departement' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:5',
         ]);
@@ -74,7 +89,7 @@ class UserController extends BaseController
                 'menu_dept' => 7,
                 'menu_fiscal' => 8,
                 'menu_plan' => 9,
-                'menu_forecase' => 10,
+                'menu_forecast' => 10,
                 'menu_actual' => 11,
             ];
 

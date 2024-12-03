@@ -2,11 +2,13 @@
 
 namespace App\Controllers;
 use App\Models\Item;
+use App\Models\User;
 use Support\BaseController;
 use Support\DataTables;
 use Support\Date;
 use Support\Request;
 use Support\Response;
+use Support\Session;
 use Support\UUID;
 use Support\Validator;
 use Support\View;
@@ -26,6 +28,21 @@ class ItemController extends BaseController
     public function index()
     {
         $title = 'Item & Price';
+        $user = User::query()->leftJoin('menu_access','menu_access.uid','=','users.uid')
+        ->where('menu_access.uid','=',Session::user()->uid)
+        ->where('menu_access.menu_id','=',4)
+        ->where('menu_access.can_view','=',1)
+        ->first();
+        
+        if (!$user) {
+            View::error('errors/403');
+            return;
+        }
+
+        if(!$user && !$user->menu_id == 4 && !$user->can_view == 1){
+            View::error('errors/403');
+            return;
+        }
         return view('item/item',['title'=>$title],'layout/app');
     }
 
