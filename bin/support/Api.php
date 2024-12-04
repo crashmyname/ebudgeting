@@ -110,6 +110,7 @@ class Api
     // Dispatch routing
     public static function dispatch()
     {
+        SessionMiddleware::start();
         $method = $_SERVER['REQUEST_METHOD'];
         if ($method === 'POST' && isset($_POST['_method'])) {
             $method = strtoupper($_POST['_method']); // Ubah method menjadi PUT/DELETE jika ada

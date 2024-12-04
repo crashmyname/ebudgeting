@@ -689,6 +689,17 @@
             var selectedData = table.rows({
                 selected: true
             }).data();
+            if (selectedData.length == 0) {
+                Swal.fire({
+                    title: 'info',
+                    icon: 'info',
+                    text: 'No data selected',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    timerProgressBar: true,
+                });
+                return;
+            }
             if (selectedData.length > 0) {
                 Swal.fire({
                     title: 'Delete',
