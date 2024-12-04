@@ -9,9 +9,10 @@
     <?php $user = \Support\Session::user(); ?>
     <div class="card-body">
         <?php foreach($user->menus as $menu): ?>
-        <?= $menu->menu_id == 2 && $menu->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>' : '' ?>
-        <?= $menu->menu_id == 2 && $menu->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="" id="modalupdatecategory">Edit +</button>' : '' ?>
-        <?= $menu->menu_id == 2 && $menu->can_delete == 1 ? '<button class="btn btn-danger" type="submit" id="deletecategory">Delete +</button>' : '' ?>
+            <?= $menu->menu_id == 2 && $menu->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button>' : '' ?>
+            <?= $menu->menu_id == 2 && $menu->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="" id="modalupdatecategory">Edit +</button>' : '' ?>
+            <?= $menu->menu_id == 2 && $menu->can_delete == 1 ? '<button class="btn btn-danger" type="submit" id="deletecategory">Delete +</button>' : '' ?>
+            <?= $menu->menu_id == 2 && $menu->can_view == 1 ? '<button class="btn btn-success" type="submit" id="exportexcel">Export Excel +</button> <button class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalImport">Import Excel +</button> <button class="btn btn-dark" id="print">Print +</button> <button class="btn btn-outline-danger" id="exportpdf">Export PDF +</button>' : '' ?>
         <?php endforeach; ?>
     </div>
     <div class="card-body">
@@ -72,6 +73,37 @@
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary" id="addcategory">Save changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModalImport">
+    <div class="modal-dialog modal-lg" role="document">
+        <form action="" method="POST" id="formimportcategory" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal Category</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <div class="row">
+                            <?= csrf() ?>
+                            <label>File Import Excel</label>
+                            <input type="file" name="file" id="file" class="form-control">
+                        </div>
+                        <div class="row-body">
+                            <!-- <button type="submit" class="btn btn-primary">Save</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="importcategory">Save changes</button>
+                    <button type="button" class="btn btn-disabled btn-primary btn-progress" id="loading" style="display:none">Save changes</button>
                 </div>
             </div>
         </form>
@@ -200,6 +232,59 @@
                     }
                 }
             })
+        })
+        $('#importcategory').on('click', function(e){
+            e.preventDefault();
+            var url = '<?= base_url() . '/import-category' ?>';
+            var formData = new FormData($('#formimportcategory')[0]);
+            $('#importcategory').hide();
+            $('#loading').show();
+            if(($('#file').val() === '')){
+                Swal.fire({
+                    title: 'Warning',
+                    icon: 'warning',
+                    text: 'File Import is Empty',
+                })
+                $('#importcategory').show();
+                $('#loading').hide();
+            }
+            
+            $.ajax({
+                type: 'POST',
+                url: url,
+                processData: false,
+                contentType: false,
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status == 200) {
+                        Swal.fire({
+                            title: 'Success',
+                            icon: 'success',
+                            text: 'category Import',
+                        });
+                        $('#importcategory').show();
+                        $('#loading').hide();
+                        $('#formimportcategory')[0].reset();
+                        initDataTable().DataTable.ajax.reload(null, false);
+                    } else {
+                        Swal.fire({
+                            title: 'Error',
+                            icon: 'error',
+                            text: 'Error import',
+                        });
+                    }
+                }
+            })
+        })
+        $('#exportexcel').on('click', function() {
+            window.location.href = '<?= base_url() . '/export-category' ?>';
+        });
+        $('#print').on('click', function(){
+            window.open('<?= base_url() . '/print-category' ?>','_blank');
+        })
+        $('#exportpdf').on('click', function(){
+            window.location.href = '<?= base_url() . '/export-category-pdf' ?>';
         })
         $('#modalupdatecategory').on('click', function(e) {
             e.preventDefault();

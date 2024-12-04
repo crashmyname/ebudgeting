@@ -35,6 +35,12 @@ Route::group([AuthMiddleware::class],function(){
     Route::get('/category',[CategoryController::class,'index']);
     Route::get('/getcategory',[CategoryController::class,'getCategory']);
     Route::post('/category',[CategoryController::class,'create']);
+    Route::get('/print-category', function(){
+        return view('category/printcategory');
+    });
+    Route::get('/export-category-pdf',[CategoryController::class, 'exportPDF']);
+    Route::post('/import-category',[CategoryController::class, 'importExcel']);
+    Route::get('/export-category',[CategoryController::class, 'exportExcel']);
     Route::put('/ucategory/{id}',[CategoryController::class,'update']);
     Route::delete('/category/{id}',[CategoryController::class,'delete']);
 

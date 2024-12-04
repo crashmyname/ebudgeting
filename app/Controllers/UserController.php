@@ -48,7 +48,7 @@ class UserController extends BaseController
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'username' => 'required|min:4',
+            'username' => 'required|min:4|unique:users',
             'name' => 'required|min:3',
             'departement' => 'required',
             'email' => 'required|email',
