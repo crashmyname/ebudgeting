@@ -1289,3 +1289,69 @@ Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement
 #4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
 #5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
 #6 {main}
+[Error] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "uid" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (null, 5312623d-9a75-4f86-8b12-825799ecaea2, Algie Alamsyah, algie, $2y$10$l9vfy0pW7BZK0INyyhcaFu5.ayV39Yt0isgZWiObVFLTGDMQXx/ES, ISIS, algie@gmail.com, User, 1, null, Algie Alamsyah, Algie Alamsyah, null, 2024-12-04 11:22:53.363875, 2024-12-04 11:22:53.363875, null). in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 465
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(432): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(70): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->create(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "uid" of relation "users" violates not-null constraint
+DETAIL:  Failing row contains (null, df858168-4b0c-4dbf-9725-c0209fbf3c0f, Algie Alamsyah, algie, $2y$10$aFU4/42tiitKRW0fcNbTG.VS6nzFfiyrtZD295w1mfIKXrxW.CRMS, ISIS, algie@gmail.com, User, 1, null, Algie Alamsyah, Algie Alamsyah, null, 2024-12-04 11:23:01.575878, 2024-12-04 11:23:01.575878, null). in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 465
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(465): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(432): Support\BaseModel->save()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(70): Support\BaseModel::create(Array)
+#3 [internal function]: App\Controllers\UserController->create(Object(Support\Request))
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "menu_access" does not exist
+LINE 1: SELECT  * FROM users LEFT JOIN menu_access ON menu_access.ui...
+                                       ^ in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\UserController.php(34): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\UserController->index()
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "menu_access" does not exist
+LINE 1: SELECT  * FROM users LEFT JOIN menu_access ON menu_access.ui...
+                                       ^ in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(40): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\CategoryController->index()
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "menu_access" does not exist
+LINE 1: SELECT  * FROM users LEFT JOIN menu_access ON menu_access.ui...
+                                       ^ in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(339): Support\BaseModel->get()
+#2 C:\laragon\www\ebudgeting\app\Controllers\CategoryController.php(40): Support\BaseModel->first()
+#3 [internal function]: App\Controllers\CategoryController->index()
+#4 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#5 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#6 {main}
+[Error] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "item" does not exist
+LINE 1: SELECT  * FROM item WHERE (deleted_at IS NULL)
+                       ^ in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\app\Controllers\ItemController.php(26): Support\BaseModel->get()
+#2 [internal function]: App\Controllers\ItemController->getItem(Object(Support\Request))
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}
+[Error] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "item" does not exist
+LINE 1: SELECT  * FROM item WHERE (deleted_at IS NULL)
+                       ^ in C:\laragon\www\ebudgeting\bin\support\BaseModel.php at line 292
+Trace: #0 C:\laragon\www\ebudgeting\bin\support\BaseModel.php(292): PDOStatement->execute()
+#1 C:\laragon\www\ebudgeting\app\Controllers\ItemController.php(26): Support\BaseModel->get()
+#2 [internal function]: App\Controllers\ItemController->getItem(Object(Support\Request))
+#3 C:\laragon\www\ebudgeting\bin\support\Route.php(193): call_user_func_array(Array, Array)
+#4 C:\laragon\www\ebudgeting\index.php(26): Support\Route::dispatch()
+#5 {main}

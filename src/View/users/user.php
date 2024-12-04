@@ -12,6 +12,7 @@
         <?= $menu->menu_id == 1 && $menu->can_create == 1 ? '<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add +</button> <button class="btn btn-dark" data-toggle="modal" data-target="" id="modalrolemanagement">Role Management +</button>' : null ?>
         <?= $menu->menu_id == 1 && $menu->can_update == 1 ? '<button class="btn btn-warning" data-toggle="modal" data-target="" id="modalupdateuser">Update +</button>' : null ?>
         <?= $menu->menu_id == 1 && $menu->can_delete == 1 ? '<button class="btn btn-danger" type="submit" id="deleteuser">Delete +</button>' : '' ?>
+        <?= $menu->menu_id == 1 && $menu->can_view == 1 ? '<button class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalImport">Import Excel <i class="far fa-file-excel"></i></button> <button class="btn btn-success" type="submit" id="exportexcel">Export Excel <i class="fas fa-file-excel"></i></button> <button class="btn btn-dark" id="print">Print <i class="fas fa-print"></i></button> <button class="btn btn-outline-danger" id="exportpdf">Export PDF <i class="far fa-file-pdf"></i></button>' : '' ?>
         <?php endforeach;?>
     </div>
     <div class="card-body">
