@@ -27,7 +27,6 @@
                   </div>
                 </div>
               </div>
-              <button type="submit">kirim email</button>
               <a href="<?= base_url().'/kirim-email'?>">Test Kirim EMail</a>
         </div>
     </div>
