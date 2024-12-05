@@ -29,12 +29,6 @@ class CategoryController extends BaseController
         }
     }
 
-    public function testApi()
-    {
-        $category = Category::all();
-        return Response::json(['status'=>200,'message'=>'berhasil','data'=>$category]);
-    }
-
     public function index()
     {
         $title = 'Category';

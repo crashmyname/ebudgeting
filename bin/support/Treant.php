@@ -49,8 +49,23 @@ class Treant
             echo "Nama controller harus diberikan!\n";
             return;
         }
+
+        // Pisahkan namespace dan nama file
+        $pathParts = explode('/', $name);
+        $className = array_pop($pathParts);
+        $namespace = 'App\\Controllers';
+        if (!empty($pathParts)) {
+            $namespace .= '\\' . implode('\\', $pathParts);
+        }
+        $directory = 'app/Controllers/' . implode('/', $pathParts);
+
+        // Pastikan folder target ada
+        if (!is_dir($directory)) {
+            mkdir($directory, 0777, true); // Buat folder secara rekursif
+        }
+
         $isResource = in_array('--resource', $options);
-        $controllerTemplate = "<?php\n\nnamespace App\Controllers;\nuse Support\BaseController;\nuse Support\Request;\nuse Support\Validator;\nuse Support\View;\nuse Support\CSRFToken;\n\nclass {$name} extends BaseController\n{\n";
+        $controllerTemplate = "<?php\n\nnamespace {$namespace};\n\nuse Support\BaseController;\nuse Support\Request;\nuse Support\Validator;\nuse Support\View;\nuse Support\CSRFToken;\n\nclass {$className} extends BaseController\n{\n";
         if ($isResource) {
             $controllerTemplate .= "    public function index()\n    {\n        // Tampilkan semua resource\n    }\n\n";
             $controllerTemplate .= "    public function show(\$id)\n    {\n        // Tampilkan resource dengan ID: \$id\n    }\n\n";
@@ -61,12 +76,14 @@ class Treant
             $controllerTemplate .= "    // Controller logic here\n";
         }
         $controllerTemplate .= "}\n";
-        $filePath = "app/Controllers/{$name}.php";
+
+        $filePath = "{$directory}/{$className}.php";
+
         if (file_exists($filePath)) {
             echo "Controller $name sudah ada!\n";
         } else {
             file_put_contents($filePath, $controllerTemplate);
-            echo "Controller {$name} berhasil dibuat!\n";
+            echo "Controller {$name} berhasil dibuat di {$filePath}!\n";
         }
     }
 
@@ -76,11 +93,11 @@ class Treant
         $port = '8000';
 
         global $argv;
-        foreach($argv as $arg){
-            if(strpos($arg, '--host=') !== false){
+        foreach ($argv as $arg) {
+            if (strpos($arg, '--host=') !== false) {
                 $host = substr($arg, 7);
             }
-            if(strpos($arg, '--port=') !== false){
+            if (strpos($arg, '--port=') !== false) {
                 $port = substr($arg, 7);
             }
         }
@@ -88,17 +105,16 @@ class Treant
             echo "Error: Invalid host address provided: $host\n";
             exit(1); // Exit with error
         }
-    
+
         // Validate port (must be numeric and within range)
-        if (!is_numeric($port) || (int)$port < 1024 || (int)$port > 65535) {
+        if (!is_numeric($port) || (int) $port < 1024 || (int) $port > 65535) {
             echo "Error: Invalid port number provided: $port\n";
             exit(1); // Exit with error
         }
-        
+
         echo "Starting development server on http://{$host}:{$port}\n";
         exec("php -S {$host}:{$port}");
     }
-
 }
 
 ?>

@@ -1,13 +1,12 @@
 <?php
-use App\Controllers\AuthController;
-use App\Controllers\CategoryController;
+use App\Controllers\Api\TestController;
 use Support\Middleware;
 use Support\Request;
 use Support\Api;
 use Support\CSRFToken;
 
 // Your Route Api Here...
-Api::post('/login',[AuthController::class,'loginApi']);
+Api::post('/login',[TestController::class,'loginApi']);
 Api::group([Middleware::class], function(){
-    Api::get('/',[CategoryController::class,'testApi']);
+    Api::get('/',[TestController::class,'testApi']);
 });
