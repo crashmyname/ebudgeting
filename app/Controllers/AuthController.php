@@ -88,4 +88,25 @@ class AuthController extends BaseController
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
+
+    public function getClientInfo() 
+    {
+        // Mendapatkan IP address
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'Unknown IP';
+    
+        // Mendapatkan hostname berdasarkan IP
+        $hostname = gethostbyaddr($ip);
+    
+        // return [
+        //     'ip' => $ip,
+        //     'hostname' => $hostname
+        // ];
+        return view('test',['ip'=>$ip,'hostname'=>$hostname]);
+    }
+    
+    // // Gunakan fungsi ini
+    // $clientInfo = getClientInfo();
+    // echo "IP: " . $clientInfo['ip'] . "<br>";
+    // echo "Hostname: " . $clientInfo['hostname'];
+    
 }

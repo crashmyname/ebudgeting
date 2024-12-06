@@ -302,7 +302,10 @@
                                 (); // Jika ada fungsi DataTable yang perlu dipanggil, jalankan kembali
                         }
                     },
-                    error: function() {
+                    error: function(xhr) {
+                        if(xhr.status == 401){
+                            window.location.href = '<?=base_url()?>/login';
+                        }
                         $('.main-content').html('<p>Error loading content</p>');
                     }
                 });

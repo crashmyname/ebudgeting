@@ -28,6 +28,7 @@
                 </div>
               </div>
               <a href="<?= base_url().'/kirim-email'?>">Test Kirim EMail</a>
+              <a href="<?= base_url().'/testing'?>">Test Kirim EMail</a>
         </div>
     </div>
 </section>

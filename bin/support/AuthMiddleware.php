@@ -22,7 +22,11 @@ class AuthMiddleware
 
     public function checkLogin() {
         if (!\Support\Session::has('user')) {
-            return false;
+            http_response_code(401); // Unauthorized
+            // echo json_encode(['message' => 'Session expired']);
+            return redirect('/login');
+            // return false;
+            // exit;
         }
 
         $session_lifetime = 3600;
@@ -31,7 +35,11 @@ class AuthMiddleware
         if (isset($_SESSION['login_time']) && ($current_time - $_SESSION['login_time']) > $session_lifetime) {
             session_unset();
             session_destroy();
-            return false;
+            http_response_code(401); // Unauthorized
+            echo json_encode(['message' => 'Session expired']);
+            // return redirect('/login');
+            exit;
+            // return false;
         }
         
         $_SESSION['login_time'] = $current_time;

@@ -32,6 +32,7 @@ Route::group([AuthMiddleware::class],function(){
     Route::post('/profile/{id}',[UserController::class, 'updateProfile']);
 
     Route::get('/kirim-email',[AuthController::class, 'sendEmail']);
+    Route::get('/testing',[AuthController::class, 'getClientInfo']);
     
     // CATEGORIES
     Route::get('/category',[CategoryController::class,'index']);
