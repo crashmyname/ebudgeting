@@ -1,5 +1,7 @@
 <?php
 namespace Support;
+
+use App\Models\User;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Support\View;
@@ -8,70 +10,105 @@ class Middleware
 {
     public function __construct()
     {
-        // Memanggil loadEnv() untuk memastikan variabel lingkungan dimuat
+        // Memastikan variabel lingkungan dimuat
         self::loadEnv();
     }
-    
-    public function handle() {
+
+    public function handle()
+    {
         if (!$this->checkToken()) {
-            // Include error handling page (optional)
+            // Tampilkan respons Unauthorized
             header("HTTP/1.1 401 Unauthorized");
             echo json_encode(['error' => 'Token tidak valid atau tidak ditemukan']);
             exit();
         }
     }
 
-    public function checkToken() {
+    public function checkToken()
+    {
         $headers = getallheaders();
-    
-        // Jika tidak ada token di header
+
+        // Periksa keberadaan Authorization Header
         if (!isset($headers['Authorization'])) {
             header('Content-Type: application/json');
             header("HTTP/1.1 401 Unauthorized");
-            echo json_encode(['error' => 'Token tidak ditemukan']);
+            echo json_encode(['error' => 'Authorization token tidak ditemukan']);
             return false;
         }
-    
-        // Ambil token dari header
+
+        // Ambil Authorization token
         $authHeader = $headers['Authorization'];
-        $token = substr($authHeader, 7);  // Mengambil token setelah 'Bearer '
-        
-        // Validasi panjang token
+        $token = substr($authHeader, 7); // Mengambil token setelah 'Bearer '
+
+        // Validasi token berdasarkan panjang (JWT atau Bearer)
         if (strlen($token) > 128) {
-            // Jika token lebih panjang dari 128 karakter, anggap ini adalah JWT
-            return $this->validateJWT($token);
+            if (!$this->validateJWT($token)) {
+                return false;
+            }
         } else {
-            // Jika token lebih pendek atau kurang dari 128 karakter, anggap ini adalah Bearer biasa
-            return $this->validateBearer($token);
+            if (!$this->validateBearer($token)) {
+                return false;
+            }
         }
+
+        // Periksa keberadaan api_token di header
+        if (!isset($headers['api_key'])) {
+            header('Content-Type: application/json');
+            header("HTTP/1.1 401 Unauthorized");
+            echo json_encode(['error' => 'API Token tidak ditemukan']);
+            return false;
+        }
+
+        // Validasi api_token
+        $apiToken = $headers['api_key'];
+        if (!$this->validateApiToken($apiToken)) {
+            return false;
+        }
+
+        return true;
     }
 
     // Fungsi untuk memvalidasi Bearer Token biasa
-    private function validateBearer($token) {
-        // Validasi Bearer token (misalnya, periksa dengan session atau lainnya)
+    private function validateBearer($token)
+    {
         if (!isset($_SESSION['token']) || $_SESSION['token'] !== $token) {
             header('Content-Type: application/json');
             header("HTTP/1.1 401 Unauthorized");
             echo json_encode(['error' => 'Bearer Token tidak valid']);
             return false;
         }
-        
+
         return true;
     }
 
     // Fungsi untuk memvalidasi JWT
-    private function validateJWT($token) {
+    private function validateJWT($token)
+    {
         try {
-            // Decode JWT token
             $decoded = JWT::decode($token, new Key($_ENV['JWT_SECRET'], 'HS256'));
-            $_SESSION['user'] = $decoded;  // Simpan informasi user dari JWT
+            $_SESSION['user'] = $decoded; // Simpan informasi user dari JWT
         } catch (\Exception $e) {
             header('Content-Type: application/json');
             header("HTTP/1.1 401 Unauthorized");
             echo json_encode(['error' => 'JWT Token tidak valid', 'message' => $e->getMessage()]);
             return false;
         }
-        
+
+        return true;
+    }
+
+    // Fungsi untuk memvalidasi api_token
+    private function validateApiToken($apiToken)
+    {
+        $user = User::query()->where('api_key','=',$apiToken)->first();
+        // Validasi API token, misalnya mencocokkan dengan token yang disimpan di database
+        if ($apiToken !== $user->api_key) { // Contoh validasi dengan .env
+            header('Content-Type: application/json');
+            header("HTTP/1.1 401 Unauthorized");
+            echo json_encode(['error' => 'API Token tidak valid']);
+            return false;
+        }
+
         return true;
     }
 
@@ -89,5 +126,3 @@ class Middleware
         }
     }
 }
-
-

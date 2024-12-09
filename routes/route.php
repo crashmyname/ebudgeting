@@ -28,8 +28,8 @@ Route::group([AuthMiddleware::class],function(){
     Route::post('/role-management/{id}',[UserController::class, 'role']);
     Route::put('/uuser/{id}',[UserController::class, 'update']);
     Route::delete('/user/{id}',[UserController::class, 'delete']);
-    Route::get('/profile/{id}',[UserController::class, 'profile']);
-    Route::post('/profile/{id}',[UserController::class, 'updateProfile']);
+    Route::get('/user/profile/{id}',[UserController::class, 'profile']);
+    Route::post('/user/profile/{id}',[UserController::class, 'updateProfile']);
 
     Route::get('/kirim-email',[AuthController::class, 'sendEmail']);
     Route::get('/testing',[AuthController::class, 'getClientInfo']);

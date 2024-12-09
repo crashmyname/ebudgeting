@@ -65,7 +65,7 @@
             </div>
             <div class="col-12 col-md-12 col-lg-7">
                 <div class="card">
-                    <form method="post" action="<?= base_url().'/profile/'.$user->uuid ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?= base_url().'/user/profile/'.$user->uuid ?>" enctype="multipart/form-data">
                         <?= csrf()?>
                         <div class="card-header">
                             <h4>Edit Profile</h4>

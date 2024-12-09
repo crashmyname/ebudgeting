@@ -28,7 +28,7 @@
 <!-- /END GA --></head>
 <style>
   body{
-    background-image: url('public/images/bgebudgeting1.png');
+    background-image: url('public/images/newebudgeting.jpg');
     background-size: cover;
   }
 </style>

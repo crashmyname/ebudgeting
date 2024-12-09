@@ -2,6 +2,7 @@
 
 namespace App\Controllers\Api;
 use App\Models\Category;
+use App\Models\User;
 use Firebase\JWT\JWT;
 use Support\Auth;
 use Support\BaseController;
@@ -31,7 +32,12 @@ class TestController extends BaseController
 
             // Generate token
             $token = JWT::encode($payload, $_ENV['JWT_SECRET'], 'HS256');
-            return Response::json(['status' => 200, 'message' => 'success login', 'token' => $token]);
+            $api_key = User::query()->where('api_key','=',\Support\Session::user()->api_key)->first();
+            $data = [
+                'token' => $token,
+                'api_key' => $api_key->api_key
+            ];
+            return Response::json(['status' => 200, 'message' => 'success login', 'data'=>$data]);
         }
     }
     public function testApi()
