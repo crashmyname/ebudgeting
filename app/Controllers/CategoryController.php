@@ -284,4 +284,10 @@ class CategoryController extends BaseController
         $category->save();
         return Response::json(['status' => 200]);
     }
+
+    public function testProtected()
+    {
+        $act = new ActivityController();
+        return $act->activity();
+    }
 }

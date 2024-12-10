@@ -15,6 +15,7 @@
             <?= $menu->menu_id == 2 && $menu->can_view == 1 ? '<button class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalImport">Import Excel <i class="far fa-file-excel"></i></button> <button class="btn btn-success" type="submit" id="exportexcel">Export Excel <i class="fas fa-file-excel"></i></button> <button class="btn btn-dark" id="print">Print <i class="fas fa-print"></i></button> <button class="btn btn-outline-danger" id="exportpdf">Export PDF <i class="far fa-file-pdf"></i></button>' : '' ?>
         <?php endforeach; ?>
     </div>
+    <a href="<?= base_url()?>/tester">Testing</a>
     <div class="card-body">
         <table id="datatable" class="display" style="width:100%">
             <thead>

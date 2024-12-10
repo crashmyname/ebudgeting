@@ -1,4 +1,5 @@
 <?php
+use App\Controllers\ActivityController;
 use App\Controllers\AuthController;
 use App\Controllers\CategoryController;
 use App\Controllers\ExpensesController;
@@ -32,7 +33,8 @@ Route::group([AuthMiddleware::class],function(){
     Route::post('/user/profile/{id}',[UserController::class, 'updateProfile']);
 
     Route::get('/kirim-email',[AuthController::class, 'sendEmail']);
-    Route::get('/testing',[AuthController::class, 'getClientInfo']);
+    Route::get('/testing',[ActivityController::class, 'activity']);
+    Route::get('/tester',[CategoryController::class, 'testProtected']);
     
     // CATEGORIES
     Route::get('/category',[CategoryController::class,'index']);
